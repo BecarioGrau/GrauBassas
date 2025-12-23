@@ -1,7 +1,6 @@
 import React from 'react';
-import Marquee from './Marquee';
 import MenuItem from './MenuItem';
-import { menuData, marqueeItems } from '../data/data';
+import { menuData,} from '../data/data';
 import logo from '../assets/img/Imagotipo_GrauBassas_horizontal.png';
 
 export default function Header() {
@@ -16,7 +15,6 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b-4 border-primary sticky top-0 z-50 overflow-visible">
-      <Marquee items={marqueeItems} />
 
       <div className="w-full flex items-stretch">
         <div className="flex items-center py-0 w-1/3 h-[80px]">
