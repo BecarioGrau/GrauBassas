@@ -1,5 +1,6 @@
 import React from 'react';
 import Marquee from './Marquee';
+import MenuItem from './MenuItem';
 import { menuData, marqueeItems } from '../data/data';
 import logo from '../assets/img/Imagotipo_GrauBassas_horizontal.png';
 
@@ -14,7 +15,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white border-b-4 border-primary sticky top-0 z-50 overflow-hidden">
+    <header className="bg-white border-b-4 border-primary sticky top-0 z-50 overflow-visible">
       <Marquee items={marqueeItems} />
 
       <div className="w-full flex items-stretch">
@@ -26,17 +27,27 @@ export default function Header() {
 
         <div className="flex-grow relative">
           <div className="relative h-full flex items-stretch justify-end pl-4 pr-0">
-            <div className="absolute top-0 right-[-100vw] left-0 bottom-0 bg-primary select-none -z-10 w-[200vw]"
+            <div className="absolute top-0 right-[-100vw] left-0 bottom-0 bg-primary select-none -z-10 w-[200vw] hover:bg-primary-dark transition-colors"
               style={{ clipPath: 'polygon(50px 0, 100% 0, 100% 100%, 0% 100%)' }}></div>
 
             <nav className="relative z-10 h-full">
               <ul className="flex h-full text-sm font-bold text-white uppercase tracking-wider">
                 {menuData.map((item) => (
-                  <li key={item.label} className="h-full">
-                    <a href={item.href}
-                      className={`relative h-full flex items-center px-12 transition-all duration-300 before:content-[''] before:absolute before:inset-0 before:bg-black/20 before:[clip-path:polygon(50px_0,100%_0,calc(100%-50px)_100%,0_100%)] before:origin-center ${isActive(item.href) ? 'before:scale-x-100' : 'before:scale-x-0 hover:before:scale-x-100'} before:transition-transform before:duration-300 -z-0 before:-z-10`}>
+                  <li key={item.label} className="h-full group relative">
+                    <a
+                      href={item.href}
+                      className={` hover-diagonal-bg h-full flex items-center px-12 before:[clip-path:polygon(50px_0,100%_0,calc(100%-50px)_100%,0_100%)] before:origin-center ${isActive(item.href) ? 'before:scale-x-100 before:bg-primary-dark' : ''}`}
+                    >
                       {item.label}
                     </a>
+
+                    {item.children && (
+                      <ul className="absolute top-full left-0 bg-primary min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-lg">
+                        {item.children.map((child) => (
+                          <MenuItem key={child.label} item={child} />
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
