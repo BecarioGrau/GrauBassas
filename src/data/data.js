@@ -46,9 +46,9 @@ export const materialsData = [
 
 export const menuData = [
   { label: 'Portada', href: '/', page: 'index' },
-  { label: 'Productos', href: '/productos', page: 'productos' },
-  { label: 'Servicios', href: '/servicios', page: 'servicios' },
-  { label: 'Sobre Nosotros', href: '/nosotros', page: 'nosotros' },
+  { label: 'Productos', href: '/products', page: 'productos' },
+  { label: 'Servicios', href: '/services', page: 'servicios' },
+  { label: 'Sobre Nosotros', href: '/aboutus', page: 'nosotros' },
   { label: 'Contacto', href: '/contact', page: 'contact' }
 ];
 

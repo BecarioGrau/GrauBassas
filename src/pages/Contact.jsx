@@ -9,7 +9,7 @@ export default function Contact() {
         const payload = Object.fromEntries(form.entries());
         // eslint-disable-next-line no-console
         console.log('Contact form submitted:', payload);
-        alert('Mensaje enviado (demo).');
+        alert('Mensaje enviado.');
         e.target.reset();
     }
 
