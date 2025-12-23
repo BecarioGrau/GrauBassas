@@ -49,7 +49,7 @@ export const menuData = [
   { label: 'Productos', href: '/productos', page: 'productos' },
   { label: 'Servicios', href: '/servicios', page: 'servicios' },
   { label: 'Sobre Nosotros', href: '/nosotros', page: 'nosotros' },
-  { label: 'Contacto', href: '/contacto', page: 'contacto' }
+  { label: 'Contacto', href: '/contact', page: 'contact' }
 ];
 
 export const marqueeItems = ['Inoxidable', 'Aluminios', 'Aceros', 'Hierros', 'Bronce', 'Latón', 'Cobres', 'Zinc', 'Plásticos de construcción', 'Plásticos de industria', 'Suministros'];
