@@ -39,7 +39,7 @@ export default function Home() {
           <div className="w-full md:w-1/2">
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Nuestro recorrido en <br />la industria</h3>
             <p className="text-gray-500 mb-6 text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo cum doloremque quia consequatur illum fugiat in...</p>
-            <a href="#" className="bg-primary text-white px-8 py-3 text-xs font-bold tracking-widest uppercase">Saber más</a>
+            <a href="#" className="bg-primary hover:bg-primary-dark text-white px-8 py-3 text-xs font-bold tracking-widest uppercase">Saber más</a>
           </div>
         </div>
       </section>
