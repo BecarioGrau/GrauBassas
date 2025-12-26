@@ -14,24 +14,23 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-white border-b-4 border-primary sticky top-0 z-50 overflow-visible">
+    <header className="bg-white border-b-4 border-primary sticky top-0 overflow-visible z-50">
+      <nav className="flex h-20 w-full ">
 
-      <div className="w-full flex items-stretch">
-        <div className="flex items-center py-0 w-1/3 h-[80px]">
-          <div className="flex flex-col leading-none">
-            <img src={logo} alt="GrauBassas Logo" />
+          <div className="w-1/4 bg-white flex items-center justify-center">
+            <img src={logo} alt="GrauBassas Logo"  className='h-12 object-contain'/>
           </div>
-        </div>
 
-        <div className="flex-grow relative">
-          <div className="relative h-full flex items-stretch justify-end pl-4 pr-0">
-            <div className="absolute top-0 right-[-100vw] left-0 bottom-0 bg-primary select-none -z-10 w-[200vw] hover:bg-primary-dark transition-colors"
-              style={{ clipPath: 'polygon(50px 0, 100% 0, 100% 100%, 0% 100%)' }}></div>
+            <div className="w-3/4 relative flex items-center justify-end px-6 text-white">
+              <div 
+                className="absolute inset-0 bg-primary -z-10"
+                style={{ clipPath: 'polygon(50px 0, 100% 0, 100% 100%, 0% 100%)' }}
+              />
 
-            <nav className="relative z-10 h-full">
+            
               <ul className="flex h-full text-sm font-bold text-white uppercase tracking-wider">
                 {menuData.map((item) => (
-                  <li key={item.label} className="h-full group relative">
+                  <li key={item.label} className="h-full group relative hover:z-20">
                     <a
                       href={item.href}
                       className={` hover-diagonal-bg h-full flex items-center px-12 before:[clip-path:polygon(50px_0,100%_0,calc(100%-50px)_100%,0_100%)] before:origin-center ${isActive(item.href) ? 'before:scale-x-100 before:bg-primary-dark' : ''}`}
@@ -40,7 +39,7 @@ export default function Header() {
                     </a>
 
                     {item.children && (
-                      <ul className="absolute top-full left-0 bg-primary min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-lg">
+                      <ul className="absolute top-full left-0 bg-primary min-w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-lg z-50">
                         {item.children.map((child) => (
                           <MenuItem key={child.label} item={child} />
                         ))}
@@ -49,10 +48,8 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-            </nav>
-          </div>
         </div>
-      </div>
+        </nav>
     </header>
   );
 }
