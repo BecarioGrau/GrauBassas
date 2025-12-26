@@ -122,25 +122,67 @@ export const menuData = [
         href: '/products#aceros',
         children: [
           {
-            label: 'Especiales',
+            label: 'Al Carbono',
             href: '/products#',
             children: [
-              { label: 'Chapas', href: '/products#' },
-              { label: 'Macizos', href: '/products#' },
-              { label: 'Pletinas', href: '/products#' },
+              { label: 'F-1110', href: '/products#' },
+              { label: 'F-1120', href: '/products#' },
+              { label: 'F-1130', href: '/products#' },
+              { label: 'F-1140', href: '/products#' },
+              { label: 'F-1150', href: '/products#' },
+              { label: 'ST52-3', href: '/products#' },
             ]
           },
 
           {
-            label: 'Hidráulicos',
+            label: 'Cementación',
             href: '/products#',
             children: [
-              { label: 'Accesorios', href: '/products#' },
-              { label: 'Huecos', href: '/products#' },
-              { label: 'Macizos', href: '/products#' },
-              { label: 'Tubos', href: '/products#' },
+              { label: 'F-1510', href: '/products#' },
+              { label: 'F-1516', href: '/products#' },
+              { label: 'F-1540', href: '/products#' },
+              { label: 'F-1550', href: '/products#' },
+              { label: 'F-1560', href: '/products#' },
+              { label: 'F-1582', href: '/products#' },
             ]
           },
+          {
+            label: 'Resistencia',
+            href: '/products#',
+            children: [
+              { label: 'F-1252', href: '/products#' },
+              { label: 'F-1272', href: '/products#' },
+            ]
+          },
+          {
+            label: 'Rodamientos',
+            href: '/products#',
+            children: [
+              { label: 'F-1310', href: '/products#' },
+            ]
+          },
+          {
+            label: 'Alta elasticidad',
+            href: '/products#',
+            children: [
+              { label: 'F-1430', href: '/products#' },
+            ]
+          },
+          {
+            label: 'Nituración',
+            href: '/products#',
+            children: [
+              { label: 'F-1740', href: '/products#' },
+            ]
+          },
+          {
+            label: 'Herramientas',
+            href: '/products#',
+            children: [
+              { label: '1.2379', href: '/products#' },
+              { label: '1.2842', href: '/products#' },
+            ]
+          }
         ]
       },
       {
