@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import ProductsDetailsHero from './ProductsDetailsHero';
 
 const ProductPage = () => {
   // Estado para el tipo de corte seleccionado
@@ -83,7 +83,9 @@ const ProductPage = () => {
   };
 
   return (
-    <main className="layout-container flex h-full grow flex-col py-5 px-4 md:px-10 lg:px-20 xl:px-40 bg-white">
+
+    <main className="layout-container flex h-full grow flex-col  bg-white">
+      <ProductsDetailsHero />
       {/* Breadcrumbs */}
       <div className="flex flex-wrap gap-2 py-4">
         <a className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">
@@ -102,46 +104,28 @@ const ProductPage = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-4">
         {/* Left Column: Cortes */}
-        <div className="lg:col-span-7 flex flex-col gap-4">
+        <div className="lg:col-span-9 flex flex-col gap-4">
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {cortes.map((corte)=>(
-            <a key={corte.id} className='h-[150px] flex flex-col relative group bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:bg-primary hover:text-white transition-all duration-300' href={corte.url}>
-              <div className='aspect-[4/3] overflow-hidden bg-gray-100'>
-                <div className='w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105' style={{backgroundImage: `url(${corte.image})`}}>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {cortes.map((corte) => (
+              <a key={corte.id} className='h-[200px] flex flex-col relative group bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:bg-primary hover:text-white transition-all duration-300' href={corte.url}>
+                <div className='aspect-[4/3] overflow-hidden bg-gray-100'>
+                  <div className='w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105' style={{ backgroundImage: `url(${corte.image})` }}>
+                  </div>
                 </div>
-              </div>
-              <div className='p-1 flex flex-col gap-1'>
-                <div className='justify-center items-center flex'>
-                  <h3 className='text-lg font-bold text-text-main'>{corte.label}</h3>
+                <div className='p-1 flex flex-col gap-1'>
+                  <div className='justify-center items-center flex'>
+                    <h3 className='text-lg font-bold text-text-main'>{corte.label}</h3>
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        </div>
-
-        {/* this is the main div for details section  */}
-        <div className="lg:col-span-5 flex flex-col gap-6">
-          {/* Header Info */}
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg font-bold dark:text-gray-900">F-1110</span>
-            </div>
-            <p className="text-[#617589] dark:text-gray-600 text-base font-normal leading-relaxed">
-              {description}
-            </p>
+              </a>
+            ))}
           </div>
-
-          <div className="h-px bg-[#f0f2f4] dark:bg-[#2a3441] w-full"></div>
-
-
         </div>
       </div>
 
       {/* Technical Specs Section   */}
-      <div className="mt-20 max-w-5xl bg-white justify-center mx-auto ">
+      <div className="my-20  max-w-5xl bg-white justify-center mx-auto ">
         <h3 className="text-2xl font-bold text-[#111418] mb-6 dark:text-gray-900">Technical Specifications</h3>
         <div className="overflow-x-auto rounded-xl border border-[#f0f2f4] dark:border-[#2a3441] dark:bg-[#1e2936]">
           <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
