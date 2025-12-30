@@ -55,7 +55,6 @@ const ProductPage = () => {
       quality: 'F-1110',
       composition: { C: '0.10', Mn: '0.40', Si: '0.15', Cr: '—', Ni: '—', Mo: '—', V: '—', WNr: '1.1141' },
       equivalents: { DIN: '1.1141', AISI: 'CK-15', SAE: '1015' },
-      mech: { estado: 'Normalizado', s_le_16: '225-275', '16_40': '210-240', '40_100': '200-230', '100_160': '190-220', gt_160: '180-210' }
     },
   ];
 
@@ -84,48 +83,49 @@ const ProductPage = () => {
 
   return (
 
-    <main className="layout-container flex h-full grow flex-col  bg-white">
+    <main className="layout-container flex h-full grow flex-col  ">
       <ProductsDetailsHero />
       {/* Breadcrumbs */}
       <div className="flex flex-wrap gap-2 py-4">
         <a className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">
-          Home
+          Portada
         </a>
         <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
         <a className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">
-          Materials
+          Calidades
         </a>
         <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
         <a className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">
-          Aluminum
+          F-1110
         </a>
         <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-4">
-        {/* Left Column: Cortes */}
-        <div className="lg:col-span-9 flex flex-col gap-4">
-
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
-            {cortes.map((corte) => (
-              <a key={corte.id} className='h-[200px] flex flex-col relative group bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:bg-primary hover:text-white transition-all duration-300' href={corte.url}>
-                <div className='aspect-[4/3] overflow-hidden bg-gray-100'>
-                  <div className='w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105' style={{ backgroundImage: `url(${corte.image})` }}>
-                  </div>
-                </div>
-                <div className='p-1 flex flex-col gap-1'>
-                  <div className='justify-center items-center flex'>
-                    <h3 className='text-lg font-bold text-text-main'>{corte.label}</h3>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+      <section className="">
+            <div className="container mx-auto px-6 justify-center items-center">
+              <div className="mb-10 text-center">
+                <h2 className="text-4xl md:text-5xl font-black text-gray-900  mb-4 tracking-tight ">Catálogo de Cortes</h2>
+              </div>
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {cortes.map((corte) => (
+                  <a key={corte} className="h-[200px] group relative flex flex-col bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:shadow-lg hover:text-white hover:bg-primary transition-all duration-300" href={corte.url}>
+                    <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                      <div className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url(${corte.image})` }} />
+                    </div>
+                    <div className="p-1 flex flex-col gap-1">
+                      <div className="flex justify-center items-center">
+                        <h3 className="text-lg font-bold text-text-main">{corte.label}</h3>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
 
       {/* Technical Specs Section   */}
-      <div className="my-20  max-w-5xl bg-white justify-center mx-auto ">
+      <div className="my-20 max-w-5xl bg-white justify-center mx-auto ">
         <h3 className="text-2xl font-bold text-[#111418] mb-6 dark:text-gray-900">Technical Specifications</h3>
         <div className="overflow-x-auto rounded-xl border border-[#f0f2f4] dark:border-[#2a3441] dark:bg-[#1e2936]">
           <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
