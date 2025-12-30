@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const ProductPage = () => {
   // Estado para el tipo de corte seleccionado
   const [selectedCutType, setSelectedCutType] = useState('custom');
@@ -18,48 +19,35 @@ const ProductPage = () => {
     'https://lh3.googleusercontent.com/aida-public/AB6AXuAKsGo4hvg1hx7nhA6m1zszOBXPT6TJwOtuH3pnvKA-zDaZyZWANrwFsYFG-x5Vvm20Ubq5P0x-Qg5nHMT05M8yBTFCZ0rAFyIpkVNW_EMG4xymmRIAQeizQrZNz9nIzT2o-M5GbFQaQTA1BaIDvfXodILgmfZwPdL7d6T68Z7RBUHSa6nHq95kMQXs7R_5Ecc1slf8RjZ7RPEMKDQdxHl7AsH7gRhOvszmBrRUd96qzShXvGxSFi1qdGdGN8yDRO4TG90B8QCcoiW6'
   );
 
-  // Miniaturas de imágenes
-  const thumbnails = [
+  //Cortes disponibles
+  const cortes = [
     {
       id: 1,
-      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeRG5RbQWugsVNcludm6LB_R3egwLO3bsZujCXgFUk-zvBjVNgu7NUaNiftVSdXhR7re94h85qhW948UhhIS_pb3HSPiCoG40_PJv4l1tXsTf7LP22L0bPlI4_syHXR4G7Hnz5bRhwUW4ELEMzYXgOuG3f4gtLCFh6xMHWtvqaPKFyfs7VVaIV_4TOOn5NFnsyz0HW1ELupoBOvQEcD0eMeEhuVqizajPMA01h1z-2EvzOQREhsB-qnUmUC-KdfUTmQKMhDKzv9LKS',
+      label: 'Maziso',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCeRG5RbQWugsVNcludm6LB_R3egwLO3bsZujCXgFUk-zvBjVNgu7NUaNiftVSdXhR7re94h85qhW948UhhIS_pb3HSPiCoG40_PJv4l1tXsTf7LP22L0bPlI4_syHXR4G7Hnz5bRhwUW4ELEMzYXgOuG3f4gtLCFh6xMHWtvqaPKFyfs7VVaIV_4TOOn5NFnsyz0HW1ELupoBOvQEcD0eMeEhuVqizajPMA01h1z-2EvzOQREhsB-qnUmUC-KdfUTmQKMhDKzv9LKS',
       alt: 'Close up of brushed aluminum metal sheet'
     },
     {
       id: 2,
-      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmQLmBiWBCNfci0bwcxKGzYv1PWBH1iOyCuNZEsGjAiB9q6m1_yg7WHVTcfevQuewzd3l8AKP5EKZCa1Q90aHxgUiApYGZmoKGObrZlFgJdX_PrQB_a4Uqmz4-exeBMh0zF7EC80ZfMvTqDxfvtOaPFnOtMKvSU6wFmn9h3kjyOZMj7HlK6lBFB9c7AbpaFasuZoDOLixEK4q2XUFu5yRJD-BU-2KWLw426ugSuJP-xnAf6s7QTOo8zXwcRsxVeEWeHCrNWrV9Kc92',
+      label: 'Chapa',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmQLmBiWBCNfci0bwcxKGzYv1PWBH1iOyCuNZEsGjAiB9q6m1_yg7WHVTcfevQuewzd3l8AKP5EKZCa1Q90aHxgUiApYGZmoKGObrZlFgJdX_PrQB_a4Uqmz4-exeBMh0zF7EC80ZfMvTqDxfvtOaPFnOtMKvSU6wFmn9h3kjyOZMj7HlK6lBFB9c7AbpaFasuZoDOLixEK4q2XUFu5yRJD-BU-2KWLw426ugSuJP-xnAf6s7QTOo8zXwcRsxVeEWeHCrNWrV9Kc92',
       alt: 'Stack of aluminum sheets in industrial warehouse'
     },
     {
       id: 3,
-      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMJ5-HtUNFlHeNLzpWMEg61Y7rlk_zFSg_kE2UzBv7j0l-pC7rgQcIUNRc0wFc2prPU2tSD8Vbezbvq3ARk48JsXKBB2gWM9vbRvp16MQa6WqTfJZG2x1xn3BzXLDDuxhzrM03meBgvHYbvUhAfAgPNmaXMh1nwazSP1v6CKnc8KAGa6GAevs3QynGm9S1SdRYaSEBd60im_gE0KTpEsNFToPQrgg7bezYblZiqMskY-wgF6h8vTJ3iqRgWsXKPe9o2Q5oe0ovNcp4',
+      label: 'Ángulo',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMJ5-HtUNFlHeNLzpWMEg61Y7rlk_zFSg_kE2UzBv7j0l-pC7rgQcIUNRc0wFc2prPU2tSD8Vbezbvq3ARk48JsXKBB2gWM9vbRvp16MQa6WqTfJZG2x1xn3BzXLDDuxhzrM03meBgvHYbvUhAfAgPNmaXMh1nwazSP1v6CKnc8KAGa6GAevs3QynGm9S1SdRYaSEBd60im_gE0KTpEsNFToPQrgg7bezYblZiqMskY-wgF6h8vTJ3iqRgWsXKPe9o2Q5oe0ovNcp4',
       alt: 'Worker measuring aluminum sheet dimensions'
     },
     {
       id: 4,
-      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA264JCnJCUrE4IzS4ctV-e-wxbCEFJFKrtcK3Y_CKXeqn6XoOevE41vReZVIujGEzCTfIJrWUyGZkG7ljUWAs8KFPInfBsU0KAi5__MDIl1rrUENDNdXrLcxXY25j_3ZUAkUv--FHLezgMI6doB9LQUn196PBIFIfbwjSFuLb4lfyjTc4McldMe5dxzkTZgKNos3lM8yaZZVoPtNt48yYaH1Zwv44yMYADzp9ashriZaYDN4U7eZ1xVEjYPKlVYRMKV3rb1MkNMbnl',
+      label: 'Cuadrado',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA264JCnJCUrE4IzS4ctV-e-wxbCEFJFKrtcK3Y_CKXeqn6XoOevE41vReZVIujGEzCTfIJrWUyGZkG7ljUWAs8KFPInfBsU0KAi5__MDIl1rrUENDNdXrLcxXY25j_3ZUAkUv--FHLezgMI6doB9LQUn196PBIFIfbwjSFuLb4lfyjTc4McldMe5dxzkTZgKNos3lM8yaZZVoPtNt48yYaH1Zwv44yMYADzp9ashriZaYDN4U7eZ1xVEjYPKlVYRMKV3rb1MkNMbnl',
       alt: 'Technical drawing blueprint of metal part'
     }
   ];
 
   const description = 'Lorem ipsum dolor sit amet consectetur adipiscing elit donec, imperdiet fusce eleifend condimentum dictumst mus ultricies hac gravida, erat aliquam tempus montes vestibulum senectus primis.';
-
-  // Opciones de corte
-  const cutOptions = [
-    {
-      id: 'full',
-      title: 'Full Sheet (48" x 96")',
-      description: 'Standard factory size. Unfinished edges.',
-      active: false
-    },
-    
-    {
-      id: 'custom',
-      title: 'Custom Cut',
-      description: 'Specify your exact dimensions.',
-      active: true
-    }
-  ];
 
   // Tabla técnica (calidad, composición, equivalencias, características mecánicas)
   const materialTable = [
@@ -69,28 +57,6 @@ const ProductPage = () => {
       equivalents: { DIN: '1.1141', AISI: 'CK-15', SAE: '1015' },
       mech: { estado: 'Normalizado', s_le_16: '225-275', '16_40': '210-240', '40_100': '200-230', '100_160': '190-220', gt_160: '180-210' }
     },
-  ];
-
-  // Productos relacionados
-  const relatedProducts = [
-    {
-      id: 1,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-nGkB8yiKpAexw3zkFps-qR-jxC-l6GTikKgeeXZn6YygDdGUUUTBRT5-kUYp_5mnFN3FafZPsHIF8UTj6JPLYyu5IhP6a8zvISOWPGchPsO3MYARsVmkcWg65dLJzPKNPkHgx9EQSI117CgifTnCObx_sta-Xqw-JoRd7VP7b8OhRZL5J7GJtcNJOIJvG5NSDNlF-gQjBlsRH3hgvQgz9m2N1DqedqrDhM6iTuZT_Xdl0whZiM5S0dUHfziFN2VGMiH4FB9fUeDC',
-      category: 'Steel',
-      title: '304 Stainless Bar',
-    },
-    {
-      id: 2,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAepUw_m5H73af0wZxRndMjW7OqAqHtdc_tJr_QSUjujfjogvYuG6ZL7JDpH3LTdjQbJiC8-cmuuG1nECwY6YkdGK5eCpqgmcB6SSEVX9Q1uBNp0c0bW-kVHYD9w34GtnwqBTFnuZEuEf64W0diKLtCpZh2rQLbQMTUCmG8Z16SVtx9dA8lm4l2T-iSUUShJZkNsCyeBBsX9oGu900orgzqCLnt_rEXIHbXl6oCHiR9WOKEvqIOMrdsCDTItW-WFp5tm9b3xOlkB06k',
-      category: 'Copper',
-      title: 'C110 Copper Sheet',
-    },
-    {
-      id: 3,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC4BqK-i-ktB7Li5RxO_X08MDzzbTnmHgLe_sB0uAEc_PPFpzQr1ztLvACang7gr56TwmTyxvsRBH1flOc873YPB2ZhzL7HjPKDaFIMTZJjvnzVltq2SVCjZsNlHfJLMsF5W0HtuUHdtAYw10-gzJ_bsYEVu8smvCrsAjYjH3pT2QcTr-_5Cl5PS32r_TNi6f-Cpw-txe8pT4tS6avuhDjLA72gU_C2O9oc3W270_o-a61kI7wR7RUhO9Yw0ceyJH4_ZIlmiSKeyWE8',
-      category: 'Brass',
-      title: '360 Brass Hex Bar',
-    }
   ];
 
   // Handlers
@@ -132,39 +98,28 @@ const ProductPage = () => {
           Aluminum
         </a>
         <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
-        <span className="text-[#111418] dark:text-white text-sm font-medium leading-normal">6061-T6 Sheet</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-4">
-        {/* Left Column: Images */}
+        {/* Left Column: Cortes */}
         <div className="lg:col-span-7 flex flex-col gap-4">
-          <div className="w-full aspect-[4/3] bg-white dark:bg-[#1e2936] rounded-xl overflow-hidden border border-[#f0f2f4] dark:border-[#2a3441] shadow-sm relative group">
-            <div
-              className="w-full h-full bg-center bg-no-repeat bg-cover"
-              style={{ backgroundImage: `url('${mainImage}')` }}
-              alt="Close up of brushed aluminum metal sheet surface showing texture"
-            ></div>
-          </div>
 
-          <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
-            {thumbnails.map((thumb) => (
-              <button
-                key={thumb.id}
-                onClick={() => handleThumbnailClick(thumb.url)}
-                className={`flex-none w-24 h-24 rounded-lg overflow-hidden border-2 ${mainImage === thumb.url ? 'border-primary ring-2 ring-primary/20' : 'border-[#f0f2f4] dark:border-[#2a3441] hover:border-primary/50'} transition-colors`}
-              >
-                <div
-                  className="w-full h-full bg-center bg-cover"
-                  style={{ backgroundImage: `url('${thumb.url}')` }}
-                  alt={thumb.alt}
-                >
-                  <p>
-                    <span className="sr-only text-primary">{thumb.alt}</span>
-                  </p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {cortes.map((corte)=>(
+            <a key={corte.id} className='h-[150px] flex flex-col relative group bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:bg-primary hover:text-white transition-all duration-300' href={corte.url}>
+              <div className='aspect-[4/3] overflow-hidden bg-gray-100'>
+                <div className='w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105' style={{backgroundImage: `url(${corte.image})`}}>
                 </div>
-              </button>
-            ))}
-          </div>
+              </div>
+              <div className='p-1 flex flex-col gap-1'>
+                <div className='justify-center items-center flex'>
+                  <h3 className='text-lg font-bold text-text-main'>{corte.label}</h3>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
         </div>
 
         {/* this is the main div for details section  */}
@@ -186,7 +141,7 @@ const ProductPage = () => {
       </div>
 
       {/* Technical Specs Section   */}
-      <div className="mt-2 max-w-5xl bg-white justify-center mx-auto ">
+      <div className="mt-20 max-w-5xl bg-white justify-center mx-auto ">
         <h3 className="text-2xl font-bold text-[#111418] mb-6 dark:text-gray-900">Technical Specifications</h3>
         <div className="overflow-x-auto rounded-xl border border-[#f0f2f4] dark:border-[#2a3441] dark:bg-[#1e2936]">
           <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
