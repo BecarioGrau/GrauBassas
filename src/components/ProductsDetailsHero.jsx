@@ -4,7 +4,7 @@ import img1 from '../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.jpeg';
 import img2 from '../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.jpg';
 import img3 from '../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg';
 
-export default function ContactHero() {
+export default function ProductsDetailsHero() {
 
     return (
         <section className="relative w-full h-[440px] overflow-hidden bg-gray-800 text-white">
