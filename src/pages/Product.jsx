@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import FilterSidebar from '../components/FilterSideBar';
 import Pagination from '../components/Pagination';
-import { materialsData } from '../data/data';
+import { materialsData } from '../data/MaterialsData';
 
 const Product = () => {
     const [products, setProducts] = useState(materialsData);

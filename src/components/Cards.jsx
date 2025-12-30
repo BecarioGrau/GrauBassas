@@ -1,5 +1,5 @@
 import React from 'react';
-import { materialsData } from '../data/data';
+import { materialsData } from '../data/MaterialsData';
 
 export default function Cards() {
   return (

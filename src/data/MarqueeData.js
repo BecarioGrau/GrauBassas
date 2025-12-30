@@ -1,0 +1,1 @@
+export const marqueeItems = ['Inoxidable', 'Aluminios', 'Aceros', 'Hierros', 'Bronce', 'Latón', 'Cobres', 'Zinc', 'Plásticos de construcción', 'Plásticos de industria', 'Suministros'];

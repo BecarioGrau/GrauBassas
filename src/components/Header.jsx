@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuItem from './MenuItem';
-import { menuData,} from '../data/data';
+import { menuData,} from '../data/MenuData';
 import logo from '../assets/img/Imagotipo_GrauBassas_horizontal.png';
 
 export default function Header() {
