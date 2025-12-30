@@ -125,7 +125,10 @@ export const menuData = [
             label: 'Al Carbono',
             href: '/products#',
             children: [
-              { label: 'F-1110', href: '/products#' },
+              { 
+                label: 'F-1110',
+                detail: 'Lorem ipsum dolor sit amet consectetur adipiscing elit donec, imperdiet fusce eleifend condimentum dictumst mus ultricies hac gravida, erat aliquam tempus montes vestibulum senectus primis.',
+                href: '/products/F-1110' },
               { label: 'F-1120', href: '/products#' },
               { label: 'F-1130', href: '/products#' },
               { label: 'F-1140', href: '/products#' },
