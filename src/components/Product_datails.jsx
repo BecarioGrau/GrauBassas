@@ -47,8 +47,6 @@ const ProductPage = () => {
     }
   ];
 
-  const description = 'Lorem ipsum dolor sit amet consectetur adipiscing elit donec, imperdiet fusce eleifend condimentum dictumst mus ultricies hac gravida, erat aliquam tempus montes vestibulum senectus primis.';
-
   // Tabla técnica (calidad, composición, equivalencias, características mecánicas)
   const materialTable = [
     {

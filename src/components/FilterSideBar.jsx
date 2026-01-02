@@ -100,48 +100,7 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts 
                             </label>
                         ))}
                     </div>
-                </div>
-
-                {/* Filtros adicionales (ejemplo) */}
-                <div className="mb-6">
-                    <h3 className="font-semibold text-gray-700 mb-3">Disponibilidad</h3>
-                    <div className="space-y-2">
-                        <label className="flex items-center">
-                            <input
-                                type="checkbox"
-                                className="mr-3"
-                                onChange={(e) => onFilterChange({ inStock: e.target.checked })}
-                            />
-                            <span className="text-gray-700">En stock</span>
-                        </label>
-                        <label className="flex items-center">
-                            <input
-                                type="checkbox"
-                                className="mr-3"
-                                onChange={(e) => onFilterChange({ newArrival: e.target.checked })}
-                            />
-                            <span className="text-gray-700">Nuevos productos</span>
-                        </label>
-                    </div>
-                </div>
-
-                {/* Precio (ejemplo) */}
-                <div className="mb-6">
-                    <h3 className="font-semibold text-gray-700 mb-3">Rango de precios</h3>
-                    <div className="space-y-4">
-                        <div className="flex items-center justify-between">
-                            <span className="text-sm text-gray-600">Min: €0</span>
-                            <span className="text-sm text-gray-600">Max: €500</span>
-                        </div>
-                        <input
-                            type="range"
-                            min="0"
-                            max="500"
-                            className="w-full"
-                            onChange={(e) => onFilterChange({ maxPrice: e.target.value })}
-                        />
-                    </div>
-                </div>
+                </div>               
 
                 {/* Mostrar resultados */}
                 <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
