@@ -4,7 +4,7 @@ import { marqueeItems } from './data/MarqueeData'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Product from './pages/Product'
-import ProductDetails from './components/Product_datails'
+import ProductDetails from './components/ProductDetails'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
 
@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/products" element={<Product />} />
-        <Route path="/products/F-1110" element={<ProductDetails />} />
+        <Route path="/products/:title" element={<ProductDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

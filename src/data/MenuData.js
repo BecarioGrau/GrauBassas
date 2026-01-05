@@ -61,11 +61,11 @@ export const menuData = [
                 label: 'F-1110',
                 detail: 'Lorem ipsum dolor sit amet consectetur adipiscing elit donec, imperdiet fusce eleifend condimentum dictumst mus ultricies hac gravida, erat aliquam tempus montes vestibulum senectus primis.',
                 href: '/products/F-1110' },
-              { label: 'F-1120', href: '/products#' },
-              { label: 'F-1130', href: '/products#' },
-              { label: 'F-1140', href: '/products#' },
-              { label: 'F-1150', href: '/products#' },
-              { label: 'ST52-3', href: '/products#' },
+              { label: 'F-1120', href: '/products/F-1120' },
+              { label: 'F-1130', href: '/products/F-1130' },
+              { label: 'F-1140', href: '/products/F-1140' },
+              { label: 'F-1150', href: '/products/F-1150' },
+              { label: 'ST52-3', href: '/products/ST52-3' },
             ]
           },
 
@@ -73,12 +73,12 @@ export const menuData = [
             label: 'Cementación',
             href: '/products#',
             children: [
-              { label: 'F-1510', href: '/products#' },
-              { label: 'F-1516', href: '/products#' },
-              { label: 'F-1540', href: '/products#' },
-              { label: 'F-1550', href: '/products#' },
-              { label: 'F-1560', href: '/products#' },
-              { label: 'F-1582', href: '/products#' },
+              { label: 'F-1510', href: '/products/F-1510' },
+              { label: 'F-1516', href: '/products/F-1516' },
+              { label: 'F-1540', href: '/products/F-1540' },
+              { label: 'F-1550', href: '/products/F-1550' },
+              { label: 'F-1560', href: '/products/F-1560' },
+              { label: 'F-1582', href: '/products/F-1582' },
             ]
           },
           {

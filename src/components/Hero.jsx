@@ -7,19 +7,13 @@ import img3 from '../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg';
 export default function Hero() {
 
   return (
-    // Cambiamos h-[490px] por min-h para evitar cortes en móviles si el texto es largo
     <section className="relative w-full min-h-[600px] md:h-[390px] overflow-hidden bg-gray-800 text-white flex flex-col">
       
-      {/* Background y Overlay */}
       <div className="absolute inset-0 w-full h-full">
          <BackgroundSlideshow images={[img1, img2, img3]} />
          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20 md:to-transparent"></div>
       </div>
 
-      {/* BARRA DE INFORMACIÓN 
-         Mobile: width-full, relative (parte del flujo), centered
-         Desktop: absolute top-right, shadow
-      */}
       <div className="relative w-full bg-white z-20 px-4 py-2 flex justify-center md:absolute md:top-0 md:right-0 md:w-auto md:px-5 md:py-1 md:justify-start md:shadow-lg">
         <div className="flex items-center gap-4 text-xs md:text-sm text-gray-700">
             <span className="flex items-center gap-1 md:gap-2">
@@ -39,7 +33,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* CONTENIDO PRINCIPAL */}
       <div className="container mx-auto flex-grow flex flex-col justify-center relative z-10 px-6 py-10 md:pt-10 md:pb-0">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg max-w-3xl break-words">
           Venta y distribución de <br className="hidden md:block" />
@@ -51,7 +44,6 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* FORMA INFERIOR (Clip Path) */}
       <div 
         className="absolute bottom-0 left-0 w-full bg-white h-12 md:h-24 z-20" 
         style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 50%, 30% 0, 0 50%)' }}

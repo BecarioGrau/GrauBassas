@@ -1,0 +1,112 @@
+import React, { useState } from 'react';
+import ProductsDetailsHero from './ProductsDetailsHero';
+import { CalidadesData } from '../data/CalidadesData';
+import { useParams } from 'react-router-dom';
+
+const ProductDetails = () => {
+  const { title } = useParams();
+  const calidad = CalidadesData.find(item => item.title === title);
+
+  if (!calidad) {
+    return (
+      <h2 className='flex justify-center items-center h-screen text-3xl font-bold text-[#617589] dark:text-gray-900'>
+        Calidad no encontrada
+      </h2>
+    );
+  }
+
+  const materialTable = calidad.materialTable || [];
+
+  return (
+    <main className="layout-container flex h-full grow flex-col  ">
+      <ProductsDetailsHero />
+
+      <div className="flex flex-wrap gap-2 py-4">
+        <a className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/">
+          Portada
+        </a>
+        <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
+        <a className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="/products">
+          Calidades
+        </a>
+        <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
+        <p className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors">
+          {calidad.title}
+        </p>
+        <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">/</span>
+      </div>
+
+      <section className="">
+        <div className="container mx-auto px-6 ">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900  mb-4 tracking-tight ">Catálogo de Cortes</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {calidad.cortes && calidad.cortes.map((corte, idx) => (
+              <a key={idx} className="h-[200px] group relative flex flex-col bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:shadow-lg hover:text-white hover:bg-primary transition-all duration-300" href={corte.href}>
+                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
+                  <div className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url(${corte.image})` }} />
+                </div>
+                <div className="p-1 flex flex-col gap-1">
+                  <div className="flex justify-center items-center">
+                    <h3 className="text-lg font-bold text-text-main">{corte.label}</h3>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="my-20 max-w-5xl bg-white justify-center mx-auto ">
+        <h3 className="text-2xl font-bold text-[#111418] mb-6 dark:text-gray-900">Características Técnicas</h3>
+        <div className="overflow-x-auto rounded-xl border border-[#f0f2f4] dark:border-[#2a3441] dark:bg-[#1e2936]">
+          <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
+            <thead className="bg-[#fafbfd] dark:bg-[#111827] border-1">
+              <tr className='border-1 border-white'>
+                <th rowSpan={2} className="px-4 py-3 text-left font-semibold text-[#111418] dark:text-white border-1 border-white">CALIDAD</th>
+                <th colSpan={8} className="px-4 py-3 text-center font-semibold text-[#111418] dark:text-white border-1 border-white ">COMPOSICIÓN</th>
+                <th colSpan={3} className="px-4 py-3 text-center font-semibold text-[#111418] dark:text-white border-1 border-white">EQUIVALENCIAS</th>
+              </tr>
+              <tr>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">C</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">Mn</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">Si</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">Cr</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">Ni</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">Mo</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">V</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">W.-Nr.</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">DIN</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">AISI</th>
+                <th className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white">SAE</th>
+              </tr>
+            </thead>
+
+            <tbody className="divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
+              {materialTable.map((row, idx) => (
+                <tr key={idx} className="hover:bg-gray-50 dark:hover:bg-[#2a3441]/50">
+                  <td className="px-4 py-3 font-semibold text-[#111418] dark:text-white border-1 border-white">{row.quality}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.C}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.Mn}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.Si}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.Cr}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.Ni}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.Mo}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.V}</td>
+                  <td className="px-4 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.composition.WNr}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.equivalents.DIN}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.equivalents.AISI}</td>
+                  <td className="px-3 py-2 text-gray-600 dark:text-gray-300 border-1 border-white">{row.equivalents.SAE}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default ProductDetails;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MenuItem({ item, level = 0 }) {
   const hasChildren = item.children && item.children.length > 0;
@@ -6,10 +7,10 @@ export default function MenuItem({ item, level = 0 }) {
 
   return (
     <li className="relative">
-      <a href={item.href} className={baseLinkClass}>
+      <Link to={item.href} className={baseLinkClass}>
         {item.label}
         {hasChildren}
-      </a>
+      </Link>
 
       {hasChildren && (
         <ul

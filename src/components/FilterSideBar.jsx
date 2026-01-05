@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts }) => {
     const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
-    // Ejemplo de categorías (podrías extraerlas de tus datos)
     const categories = [
         { id: 'all', name: 'Todos los productos', count: totalProducts },
         { id: 'inoxidables', name: 'Inoxidables', count: 15 },
@@ -21,7 +20,6 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts 
 
     return (
         <>
-            {/* Botón para móvil */}
             <button
                 onClick={() => setIsMobileFiltersOpen(!isMobileFiltersOpen)}
                 className="lg:hidden w-full mb-4 flex items-center justify-between px-4 py-3 bg-white border rounded-lg shadow-sm"
@@ -37,7 +35,6 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts 
                 </svg>
             </button>
 
-            {/* Panel de Filtros */}
             <div className={`
         ${isMobileFiltersOpen ? 'block' : 'hidden'}
         lg:block bg-white rounded-lg shadow-md p-6
@@ -52,7 +49,6 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts 
                     </button>
                 </div>
 
-                {/* Búsqueda */}
                 <div className="mb-6">
                     <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
                         Buscar producto
@@ -74,7 +70,6 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts 
                     </div>
                 </div>
 
-                {/* Categorías */}
                 <div className="mb-6">
                     <h3 className="font-semibold text-gray-700 mb-3">Categorías</h3>
                     <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
@@ -102,7 +97,6 @@ const FilterSidebar = ({ filters, onFilterChange, onClearFilters, totalProducts 
                     </div>
                 </div>               
 
-                {/* Mostrar resultados */}
                 <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
                     <p className="text-sm text-blue-800">
                         Se encontraron <span className="font-bold">{totalProducts}</span> productos
