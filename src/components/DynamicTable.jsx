@@ -11,11 +11,74 @@ const DynamicTable = ({ data }) => {
     return [...acc, col];
   }, []);
   return (
-    <div className="my-20 max-w-5xl bg-white justify-center mx-auto">
+    <div className="my-20 max-w-5xl mx-auto">
       <h3 className=" text-2xl font-bold dark:text-gray-900 text-[#111418] mb-6">
         Características Técnicas
       </h3>
-      <div className="">
+
+      {/* VISTA MÓVIL (Cards) */}
+      <div className="md:hidden space-y-6">
+        {rows.map((row, rIdx) => (
+          <div
+            key={rIdx}
+            className="bg-[#fafbfd] p-4 rounded-lg border border-gray-200 shadow-sm"
+          >
+            {/* Título de la fila (generalmente el primer valor) */}
+            <div className="mb-4 border-b-2 border-primary pb-1">
+              <span className="text-lg font-bold text-gray-800">
+                {row[allLeafColumns[0].key]}
+              </span>
+            </div>
+
+            {columns.map((group, gIdx) => {
+              if (group.subColumns) {
+                return (
+                  <div key={`group-${gIdx}`} className="mt-4 mb-2">
+                    <h4 className="text-xs font-black uppercase tracking-wider text-primary bg-blue-50 p-1 px-2 rounded">
+                      {group.header}
+                    </h4>
+                    <div className="pl-2">
+                      {group.subColumns.map((subCol, sIdx) => (
+                        <div
+                          key={`sub-${sIdx}`}
+                          className="flex justify-between py-2 border-b border-gray-100 last:border-0"
+                        >
+                          <span className="font-semibold text-sm text-gray-500">
+                            {subCol.header}:
+                          </span>
+                          <span className="text-sm font-medium text-gray-900">
+                            {row[subCol.key] || "—"}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              if (gIdx !== 0) {
+                return (
+                  <div
+                    key={`simple-${gIdx}`}
+                    className="flex justify-between py-2 border-b border-gray-100"
+                  >
+                    <span className="font-semibold text-sm text-gray-500">
+                      {group.header}:
+                    </span>
+                    <span className="text-sm font-medium text-gray-900">
+                      {row[group.key] || "—"}
+                    </span>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        ))}
+      </div>
+
+      {/* VISTA DESKTOP (Table) */}
+      <div className="overflow-x-auto hidden md:block sm:rounded-lg">
         <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
           {/* --- THEAD --- */}
           <thead className="bg-[#fafbfd] dark:bg-[#111827] border-1">
