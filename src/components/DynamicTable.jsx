@@ -47,7 +47,11 @@ const DynamicTable = ({ data }) => {
                             {subCol.header}:
                           </span>
                           <span className="text-sm font-medium text-gray-900">
-                            {row[subCol.key] || "—"}
+                            {Array.isArray(row[subCol.key])
+                              ? row[subCol.key].map((item, i) => (
+                                  <div key={i}>{item}</div>
+                                ))
+                              : row[subCol.key] || "—"}
                           </span>
                         </div>
                       ))}
@@ -66,7 +70,11 @@ const DynamicTable = ({ data }) => {
                       {group.header}:
                     </span>
                     <span className="text-sm font-medium text-gray-900">
-                      {row[group.key] || "—"}
+                      {Array.isArray(row[group.key])
+                        ? row[group.key].map((item, i) => (
+                            <div key={i}>{item}</div>
+                          ))
+                        : row[group.key] || "—"}
                     </span>
                   </div>
                 );
@@ -100,7 +108,7 @@ const DynamicTable = ({ data }) => {
               ))}
             </tr>
 
-            {/* Segunda Fila de Cabeceras (Solo si existen subcolumnas) */}
+            {/* Segunda Fila de Cabeceras */}
             {hasSubHeaders && (
               <tr>
                 {columns.map((col) => {
@@ -108,7 +116,7 @@ const DynamicTable = ({ data }) => {
                     return col.subColumns.map((subCol, subIdx) => (
                       <th
                         key={`th-sub-${subIdx}`}
-                        className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white"
+                        className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white text-center"
                       >
                         {subCol.header}
                       </th>
@@ -133,7 +141,13 @@ const DynamicTable = ({ data }) => {
                         : "text-gray-600 dark:text-gray-300"
                     }`}
                   >
-                    {row[col.key] || "—"}
+                    {Array.isArray(row[col.key])
+                      ? row[col.key].map((item, i) => (
+                          <div key={i} className="whitespace-nowrap">
+                            {item}
+                          </div>
+                        ))
+                      : row[col.key] || "—"}
                   </td>
                 ))}
               </tr>
