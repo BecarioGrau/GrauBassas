@@ -4,11 +4,6 @@
   --color-primary: #9e1b32;
   --color-primary-dark: #7a1223;
 }
-/* @layer base {
-  ::selection {
-    @apply bg-primary text-white;
-  }
-} */
 @layer components {
   .hover-diagonal-bg {
     @apply relative
