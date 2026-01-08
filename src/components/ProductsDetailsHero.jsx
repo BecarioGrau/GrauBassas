@@ -19,7 +19,7 @@ export default function ProductsDetailsHero() {
   }
 
   return (
-    <section className="relative w-full h-[500px] md:h-[440px] overflow-hidden bg-gray-800 text-white">
+    <section className="relative w-full h-[500px] md:h-[460px] overflow-hidden bg-gray-800 text-white">
       <BackgroundSlideshow images={[img1, img2, img3]} />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent img"></div>

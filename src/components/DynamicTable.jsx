@@ -41,7 +41,7 @@ const DynamicTable = ({ data }) => {
                       {group.subColumns.map((subCol, sIdx) => (
                         <div
                           key={`sub-${sIdx}`}
-                          className="flex justify-between py-2 border-b border-gray-100 last:border-0"
+                          className="flex justify-between py-2 border-b border-gray-500 last:border-0 items-center"
                         >
                           <span className="font-semibold text-sm text-gray-500">
                             {subCol.header}:
