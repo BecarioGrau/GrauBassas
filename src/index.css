@@ -1,14 +1,17 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@theme{
+@theme {
   --color-primary: #9e1b32;
   --color-primary-dark: #7a1223;
 }
-
+/* @layer base {
+  ::selection {
+    @apply bg-primary text-white;
+  }
+} */
 @layer components {
   .hover-diagonal-bg {
-    @apply
-      relative
+    @apply relative
       z-10
       transition-all
       duration-300
@@ -22,5 +25,14 @@
       before:transition-transform
       before:duration-300
       before:-z-10;
+  }
+  .h2-aviso-legal {
+    @apply text-2xl font-bold text-primary underline;
+  }
+  .p-aviso-legal {
+    @apply text-justify my-4;
+  }
+  ::selection {
+    @apply bg-primary text-white;
   }
 }
