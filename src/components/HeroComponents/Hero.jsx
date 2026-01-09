@@ -6,7 +6,7 @@ import img3 from "../../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg";
 
 export default function Hero({ title, description }) {
   return (
-    <section className="relative w-full h-[440px] overflow-hidden bg-gray-800 text-white">
+    <section className="relative w-full h-[500px] md:h-[440px] overflow-hidden bg-gray-800 text-white">
       <BackgroundSlideshow images={[img1, img2, img3]} />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent img"></div>
