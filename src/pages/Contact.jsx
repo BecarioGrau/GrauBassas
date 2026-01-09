@@ -1,13 +1,19 @@
 import React from "react";
 import Hero from "../components/HeroComponents/Hero";
 
+const heroTile = (
+  <>
+    Ponte en <br /> contacto con nosotros
+  </>
+);
+const heroDescription =
+  "Estamos aquí para ayudarle con sus necesidades de materiales metalúrgicos. Solicite presupuesto o resuelva sus dudas.";
+
 export default function Contact() {
   function handleSubmit(e) {
     e.preventDefault();
     const form = new FormData(e.target);
-    // For now just log the values - replace with API call when ready
     const payload = Object.fromEntries(form.entries());
-    // eslint-disable-next-line no-console
     console.log("Contact form submitted:", payload);
     alert("Mensaje enviado.");
     e.target.reset();
@@ -15,7 +21,7 @@ export default function Contact() {
 
   return (
     <>
-      <Hero />
+      <Hero title={heroTile} description={heroDescription} />
 
       <main className="flex-grow container mx-auto px-4 md:px-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

@@ -4,7 +4,7 @@ import img1 from "../../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.jpeg";
 import img2 from "../../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.jpg";
 import img3 from "../../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg";
 
-export default function Hero() {
+export default function Hero({ title, description }) {
   return (
     <section className="relative w-full h-[440px] overflow-hidden bg-gray-800 text-white">
       <BackgroundSlideshow images={[img1, img2, img3]} />
@@ -13,12 +13,10 @@ export default function Hero() {
 
       <div className="container mx-auto h-full flex flex-col pt-10 relative z-10 px-4">
         <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-          Ponte en <br />
-          contacto con nosotros
+          {title}
         </h1>
         <p className="mt-6 text-lg md:text-xl max-w-2xl bg-black/30 p-4 border-l-4 border-primary backdrop-blur-sm">
-          Estamos aquí para ayudarle con sus necesidades de materiales
-          metalúrgicos. Solicite presupuesto o resuelva sus dudas.
+          {description}
         </p>
       </div>
 
