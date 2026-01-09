@@ -1,4 +1,4 @@
-export const aceros = [
+export const acerosData = [
   //Al Carbono
   {
     id: 1,

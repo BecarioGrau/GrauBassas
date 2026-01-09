@@ -1,4 +1,4 @@
-import { aceros } from "./CalidadesMaterialesData/Aceros";
-import { aluminios } from "./CalidadesMaterialesData/Aluminios";
-import { bronce } from "./CalidadesMaterialesData/Bronce";
-export const CalidadesData = [...aceros, ...aluminios, ...bronce];
+import { acerosData } from "./CalidadesMaterialesData/AcerosData";
+import { aluminiosData } from "./CalidadesMaterialesData/AluminiosData";
+import { bronceData } from "./CalidadesMaterialesData/BronceData";
+export const CalidadesData = [...acerosData, ...aluminiosData, ...bronceData];

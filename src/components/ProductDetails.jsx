@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProductsDetailsHero from "./ProductsDetailsHero";
+import ProductsDetailsHero from "./HeroComponents/ProductsDetailsHero";
 import { CalidadesData } from "../data/CalidadesData";
 import { useParams } from "react-router-dom";
 import DynamicTable from "./DynamicTable";

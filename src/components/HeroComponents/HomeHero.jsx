@@ -1,12 +1,12 @@
 import React from "react";
-import BackgroundSlideshow from "./BackgroundSlideshow";
-import img1 from "../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.jpeg";
-import img2 from "../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.jpg";
-import img3 from "../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg";
+import BackgroundSlideshow from "../BackgroundSlideshow";
+import img1 from "../../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.jpeg";
+import img2 from "../../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.jpg";
+import img3 from "../../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg";
 
-export default function Hero() {
+export default function HomeHero() {
   return (
-    <section className="relative w-full min-h-[600px] md:h-[390px] overflow-hidden bg-gray-800 text-white flex flex-col">
+    <section className="relative w-full min-h-[380px] md:min-h-[490px] overflow-hidden bg-white text-white flex flex-col">
       <div className="absolute inset-0 w-full h-full">
         <BackgroundSlideshow images={[img1, img2, img3]} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20 md:to-transparent"></div>
@@ -39,7 +39,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto flex-grow flex flex-col justify-center relative z-10 px-6 py-10 md:pt-10 md:pb-0">
+      <div className="container mx-auto flex flex-col justify-center relative z-10 px-6 pt-10 pb-16 md:pt-10 md:pb-24">
         <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg max-w-3xl break-words">
           Venta y distribución de <br className="hidden md:block" />
           <span className="block mt-1">materiales semimetalúrgicos</span>
@@ -52,7 +52,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="absolute bottom-0 left-0 w-full bg-white h-12 md:h-24 z-20"
+        className="absolute -bottom-1 left-0 w-full bg-white h-12 md:h-24 z-20"
         style={{
           clipPath: "polygon(0 100%, 100% 100%, 100% 50%, 30% 0, 0 50%)",
         }}
