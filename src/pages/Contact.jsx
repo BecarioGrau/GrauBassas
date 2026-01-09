@@ -1,15 +1,15 @@
 import React from "react";
 import Hero from "../components/HeroComponents/Hero";
 
-const heroTile = (
-  <>
-    Ponte en <br /> contacto con nosotros
-  </>
-);
-const heroDescription =
-  "Estamos aquí para ayudarle con sus necesidades de materiales metalúrgicos. Solicite presupuesto o resuelva sus dudas.";
-
 export default function Contact() {
+  const heroTile = (
+    <>
+      Ponte en <br /> contacto con nosotros
+    </>
+  );
+  const heroDescription =
+    "Estamos aquí para ayudarle con sus necesidades de materiales metalúrgicos. Solicite presupuesto o resuelva sus dudas.";
+
   function handleSubmit(e) {
     e.preventDefault();
     const form = new FormData(e.target);
