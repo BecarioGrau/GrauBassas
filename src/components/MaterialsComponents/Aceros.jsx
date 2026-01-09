@@ -15,45 +15,60 @@ const Aceros = () => {
   );
   const gruposAcero = aceroData?.children || [];
   const iconMap = {
-    AlCarbono: "precision_manufacturing",
-    Cementacion: "heat_pump",
+    "Al Carbono": "precision_manufacturing",
+    Cementación: "Foundation",
     Resistencia: "fitness_center",
     Rodamientos: "settings_backup_restore",
-    AltaElasticidad: "spring",
+    "Alta elasticidad": "Timeline",
     Nituración: "science",
-    Herramientas: "construction",
+    Herramientas: "Handyman",
   };
 
   return (
     <>
       <Hero title={heroTile} description={heroDescription} />
-      <div className="items-center mb-16 text-center flex flex-col">
-        <h2 className="text-4xl font-bold font-display text-scale-900 ">
-          Selector de Calidades
-        </h2>
+      <div className="flex items-center justify-center">
+        <h2 className="text-4xl font-bold">Selector de categorías</h2>
       </div>
-      <section className="mx-auto mb-10">
-        <div className="mx-auto mb-10">
-          {gruposAcero.map((grupo, index) => (
-            <div key={index} className="mb-6">
-              <h1 className="text-2xl font-bold text-center mb-6">
-                {grupo.label}
-              </h1>
-              <div className="flex justify-center gap-6 ">
-                {grupo.children.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.href}
-                    className="p-2 border-b border-gray-200 hover:bg-primary hover:text-white rounded-md bg-gray-200"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+      <div className="container mx-auto px-4 py-8 mb-16">
+        {gruposAcero.map((grupo, index) => {
+          const iconName = iconMap[grupo.label] || "";
+
+          return (
+            <section key={index} className="mb-12">
+              <div className="flex items-center space-x-4 mb-8 border-b pb-2 border-slate-200">
+                <span className="material-symbols-outlined text-primary text-3xl">
+                  {iconName}
+                </span>
+                <h3 className="text-2xl font-display font-bold text-slate-800">
+                  {grupo.label}
+                </h3>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                {grupo.children &&
+                  grupo.children.map((producto, subIndex) => (
+                    <a
+                      key={subIndex}
+                      href={producto.href}
+                      className="group relative bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all cursor-pointer overflow-hidden block"
+                    >
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full group-hover:bg-primary transition-colors duration-300"></div>
+
+                      <span className="block text-xl font-bold font-display text-slate-700 group-hover:text-primary transition-colors z-10 relative">
+                        {producto.label}
+                      </span>
+
+                      <span className="block text-[10px] uppercase tracking-tighter text-slate-400 mt-1 z-10 relative">
+                        {producto.tag || "Ver detalles"}
+                      </span>
+                    </a>
+                  ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
     </>
   );
 };
