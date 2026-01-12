@@ -14,8 +14,8 @@ const MobileMenuItem = ({ item, isActive, closeMenu }) => {
         <Link
           to={item.href}
           onClick={(e) => {
-            if (hasChildren) {
-              if (item.href === "#") e.preventDefault();
+            if (hasChildren && item.href === "#") {
+              e.preventDefault();
             } else {
               closeMenu();
             }

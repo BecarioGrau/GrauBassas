@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../HeroComponents/Hero";
 import { productsData } from "../../data/ProductsData";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Aceros = () => {
   const heroTile = "Aceros";
@@ -24,18 +25,41 @@ const Aceros = () => {
     Herramientas: "Handyman",
   };
 
+  const navigate = useNavigate();
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [hash, gruposAcero]);
+
   return (
     <>
       <Hero title={heroTile} description={heroDescription} />
       <div className="flex items-center justify-center">
         <h2 className="text-4xl font-bold">Selector de categorías</h2>
       </div>
-      <div className="container mx-auto px-4 py-8 mb-16">
+      <div className="container mx-auto px-4 py-8">
         {gruposAcero.map((grupo, index) => {
           const iconName = iconMap[grupo.label] || "";
 
           return (
-            <section key={index} className="mb-12">
+            <section
+              key={index}
+              className="mb-12 scroll-mt-24"
+              id={grupo.label
+                .replace(/\s+/g, "_")
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")}
+            >
               <div className="flex items-center space-x-4 mb-8 border-b pb-2 border-slate-200">
                 <span className="material-symbols-outlined text-primary text-3xl">
                   {iconName}
@@ -44,7 +68,6 @@ const Aceros = () => {
                   {grupo.label}
                 </h3>
               </div>
-
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                 {grupo.children &&
                   grupo.children.map((producto, subIndex) => (
@@ -69,6 +92,21 @@ const Aceros = () => {
           );
         })}
       </div>
+      <section className="pb-12 ">
+        <div className="container mx-auto dark:bg-[#111840] text-white p-6 rounded-md flex flex-col items-center">
+          <h4>¿Necesitas un corte a medida?</h4>
+          <p>
+            Ofrecemos servicios de sierra de cinta y logística rápida para que
+            tu proyecto no se detenga
+          </p>
+          <button
+            className="bg-primary text-white px-4 py-2 rounded-md mt-4 cursor-pointer"
+            onClick={() => navigate("/contact")}
+          >
+            Contactnos
+          </button>
+        </div>
+      </section>
     </>
   );
 };

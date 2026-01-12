@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const productsData = [
   {
     label: "Productos",
@@ -46,7 +47,7 @@ export const productsData = [
         children: [
           {
             label: "Al Carbono",
-            href: "/products#",
+            href: "/aceros#al_carbono",
             children: [
               {
                 label: "F-1110",
@@ -64,7 +65,7 @@ export const productsData = [
 
           {
             label: "Cementación",
-            href: "/products#",
+            href: "/aceros#cementacion",
             children: [
               { label: "F-1510", href: "/products/F-1510" },
               { label: "F-1516", href: "/products/F-1516" },
@@ -76,7 +77,7 @@ export const productsData = [
           },
           {
             label: "Resistencia",
-            href: "/products#",
+            href: "/aceros#resistencia",
             children: [
               { label: "F-1252", href: "/products/F-1252" },
               { label: "F-1272", href: "/products/F-1272" },
@@ -84,22 +85,22 @@ export const productsData = [
           },
           {
             label: "Rodamientos",
-            href: "/products#",
+            href: "/aceros#rodamientos",
             children: [{ label: "F-1310", href: "/products/F-1310" }],
           },
           {
             label: "Alta elasticidad",
-            href: "/products#",
+            href: "/aceros#alta_elasticidad",
             children: [{ label: "F-1430", href: "/products/F-1430" }],
           },
           {
             label: "Nituración",
-            href: "/products#",
+            href: "/aceros#nituracion",
             children: [{ label: "F-1740", href: "/products/F-1740" }],
           },
           {
             label: "Herramientas",
-            href: "/products#",
+            href: "/aceros#herramientas",
             children: [
               { label: "1.2379", href: "/products/1.2379" },
               { label: "1.2842", href: "/products/1.2842" },
