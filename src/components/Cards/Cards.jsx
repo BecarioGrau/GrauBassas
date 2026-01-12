@@ -9,7 +9,7 @@ export default function Cards() {
           <h2 className="text-4xl md:text-5xl font-black text-gray-900  mb-4 tracking-tight">
             Catálogo de Materiales
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 text-lg max-w-3xl leading-relaxed">
+          <p className="text-gray-500 text-lg max-w-3xl leading-relaxed">
             Explora nuestra amplia gama de metales y plásticos certificados para
             construcción e industria. Calidad garantizada en cada pieza.
           </p>

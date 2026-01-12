@@ -10,7 +10,7 @@ const ProductDetails = () => {
 
   if (!calidad) {
     return (
-      <h2 className="flex justify-center items-center h-screen text-3xl font-bold text-[#617589] dark:text-gray-900">
+      <h2 className="flex justify-center items-center h-screen text-3xl font-bold text-gray-900">
         Calidad no encontrada
       </h2>
     );
@@ -21,27 +21,27 @@ const ProductDetails = () => {
 
       <div className="flex flex-wrap gap-2 py-4">
         <a
-          className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors"
+          className="text-[#617589] text-gray-900 text-sm font-medium leading-normal hover:text-primary transition-colors"
           href="/"
         >
           Portada
         </a>
-        <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">
+        <span className="text-[#617589] text-gray-900 text-sm font-medium leading-normal">
           /
         </span>
         <a
-          className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors"
-          href="/products"
+          className="text-[#617589] text-gray-900 text-sm font-medium leading-normal hover:text-primary transition-colors"
+          href="/aceros"
         >
-          Calidades
+          Aceros
         </a>
-        <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">
+        <span className="text-[#617589] text-gray-900 text-sm font-medium leading-normal">
           /
         </span>
-        <p className="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary transition-colors">
+        <p className="text-[#617589] text-gray-900 text-sm font-medium leading-normal hover:text-primary transition-colors">
           {calidad.title}
         </p>
-        <span className="text-[#617589] dark:text-gray-600 text-sm font-medium leading-normal">
+        <span className="text-[#617589] text-gray-900 text-sm font-medium leading-normal">
           /
         </span>
       </div>
@@ -85,7 +85,7 @@ const ProductDetails = () => {
         <DynamicTable data={calidad.tableConfig} />
       ) : (
         <div>
-          <h2 className="text-2xl font-bold text-[#111418] mb-6 dark:text-gray-900">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900">
             No hay especificaciones técnicas disponibles para esta calidad
           </h2>
         </div>

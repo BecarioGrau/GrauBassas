@@ -3,7 +3,7 @@ import Hero from "../HeroComponents/Hero";
 import { productsData } from "../../data/ProductsData";
 import { useNavigate, useLocation } from "react-router-dom";
 import CategorySection from "./CategorySection";
-import CorteSection from "./CorteSection";
+import MedidaSection from "./MedidaSection";
 
 const Aceros = () => {
   const heroTile = "Aceros";
@@ -57,7 +57,7 @@ const Aceros = () => {
           );
         })}
       </div>
-      <CorteSection />
+      <MedidaSection />
     </>
   );
 };

@@ -142,7 +142,7 @@ export default function Contact() {
                 </div>
                 <div className="ml-3 text-sm">
                   <label
-                    className="font-medium text-gray-700 dark:text-gray-800"
+                    className="font-medium text-gray-700 "
                     htmlFor="privacy"
                   >
                     He leído y acepto la{" "}

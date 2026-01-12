@@ -12,7 +12,7 @@ const DynamicTable = ({ data }) => {
   }, []);
   return (
     <div className="my-20 max-w-5xl mx-auto">
-      <h3 className=" text-2xl font-bold dark:text-gray-900 text-[#111418] mb-6">
+      <h3 className=" text-2xl font-bold text-gray-900 text-[#111418] mb-6">
         Características Técnicas
       </h3>
 
@@ -87,9 +87,9 @@ const DynamicTable = ({ data }) => {
 
       {/* VISTA DESKTOP (Table) */}
       <div className="overflow-x-auto hidden md:block sm:rounded-lg">
-        <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
+        <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] divide-[#2a3441]">
           {/* --- THEAD --- */}
-          <thead className="bg-[#fafbfd] dark:bg-[#111827] border-1">
+          <thead className="bg-[#fafbfd] bg-gray-900 border-1">
             {/* Primera Fila de Cabeceras */}
             <tr className="border-1 border-white">
               {columns.map((col, idx) => (
@@ -99,7 +99,7 @@ const DynamicTable = ({ data }) => {
                     col.subColumns ? col.colSpan || col.subColumns.length : 1
                   }
                   rowSpan={!col.subColumns && hasSubHeaders ? 2 : 1}
-                  className={`px-4 py-3 font-semibold text-[#111418] dark:text-white border-1 border-white ${
+                  className={`px-4 py-3 font-semibold text-[#111418] text-white border-1 border-white ${
                     col.subColumns ? "text-center" : "text-left"
                   }`}
                 >
@@ -116,7 +116,7 @@ const DynamicTable = ({ data }) => {
                     return col.subColumns.map((subCol, subIdx) => (
                       <th
                         key={`th-sub-${subIdx}`}
-                        className="px-3 py-2 font-medium text-gray-600 dark:text-gray-300 border-1 border-white text-center"
+                        className="px-3 py-2 font-medium text-white border-1 border-white text-center"
                       >
                         {subCol.header}
                       </th>
@@ -129,16 +129,16 @@ const DynamicTable = ({ data }) => {
           </thead>
 
           {/* --- TBODY --- */}
-          <tbody className="divide-y divide-[#f0f2f4] dark:divide-[#2a3441]">
+          <tbody className="divide-y divide-[#f0f2f4] divide-gray-900">
             {rows.map((row, rIdx) => (
-              <tr key={rIdx} className="bg-[#fafbfd] dark:bg-[#111827]">
+              <tr key={rIdx} className="bg-[#fafbfd] bg-gray-900">
                 {allLeafColumns.map((col, cIdx) => (
                   <td
                     key={`td-${rIdx}-${cIdx}`}
                     className={`px-3 py-2 border-1 border-white ${
                       cIdx === 0
-                        ? "font-semibold text-[#111418] dark:text-white px-4 py-3"
-                        : "text-gray-600 dark:text-gray-300"
+                        ? "font-semibold text-[#111418] text-white px-4 py-3"
+                        : "text-gray-600 text-white"
                     }`}
                   >
                     {Array.isArray(row[col.key])

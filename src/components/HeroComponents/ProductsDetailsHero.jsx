@@ -12,7 +12,7 @@ export default function ProductsDetailsHero() {
 
   if (!calidad) {
     return (
-      <h2 className="flex justify-center items-center h-screen text-3xl font-bold text-[#617589] dark:text-gray-900">
+      <h2 className="flex justify-center items-center h-screen text-3xl font-bold text-gray-900">
         Calidad no encontrada
       </h2>
     );
