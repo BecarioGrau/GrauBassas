@@ -2,6 +2,7 @@ import React from "react";
 import MaterialsCard from "./MaterialsCard";
 
 const slugify = (text) => {
+  if (!text) return "";
   return text
     .toString()
     .toLowerCase()

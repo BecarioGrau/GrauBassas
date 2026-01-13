@@ -46,7 +46,7 @@ export const productsData = [
         children: [
           {
             label: "Al Carbono",
-            href: "/materials/aceros/al_carbono",
+            href: "/materiales/aceros#al_carbono",
             children: [
               {
                 label: "F-1110",
@@ -64,7 +64,7 @@ export const productsData = [
 
           {
             label: "Cementación",
-            href: "/materials/aceros#cementacion",
+            href: "/materiales/aceros#cementacion",
             children: [
               { label: "F-1510", href: "/products/F-1510" },
               { label: "F-1516", href: "/products/F-1516" },
@@ -76,7 +76,7 @@ export const productsData = [
           },
           {
             label: "Resistencia",
-            href: "/materials/aceros#resistencia",
+            href: "/materiales/aceros#resistencia",
             children: [
               { label: "F-1252", href: "/products/F-1252" },
               { label: "F-1272", href: "/products/F-1272" },
@@ -84,17 +84,17 @@ export const productsData = [
           },
           {
             label: "Rodamientos",
-            href: "/materials/aceros#rodamientos",
+            href: "/materiales/aceros#rodamientos",
             children: [{ label: "F-1310", href: "/products/F-1310" }],
           },
           {
             label: "Alta elasticidad",
-            href: "/materials/aceros#alta_elasticidad",
+            href: "/materiales/aceros#alta_elasticidad",
             children: [{ label: "F-1430", href: "/products/F-1430" }],
           },
           {
             label: "Nituración",
-            href: "/materials/aceros#nituracion",
+            href: "/materiales/aceros#nituracion",
             children: [{ label: "F-1740", href: "/products/F-1740" }],
           },
           {

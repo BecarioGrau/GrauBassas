@@ -3,55 +3,129 @@ import ProductCard from "../components/Cards/ProductCard";
 import FilterSidebar from "../components/FilterSideBar";
 import Pagination from "../components/Pagination";
 import { materialsData } from "../data/MaterialsData";
+import { productsData } from "../data/ProductsData";
+
+const slugify = (text) => {
+  if (!text) return "";
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "_")
+    .replace(/[^\w\d_-]/g, "");
+};
+
+// Función recursiva para obtener los hijos del último nivel
+const getDeepChildren = (node, categoryLabel, parentImage) => {
+  if (!node.children || node.children.length === 0) {
+    return [
+      {
+        ...node,
+        title: node.label,
+        category: categoryLabel,
+        image: parentImage,
+      },
+    ];
+  }
+  return node.children.flatMap((child) =>
+    getDeepChildren(child, categoryLabel, parentImage)
+  );
+};
+
+const getAllProductsFlat = () => {
+  const productosRoot = productsData.find((item) => item.label === "Productos");
+  if (!productosRoot?.children) return [];
+
+  return productosRoot.children.flatMap((category) => {
+    const parentImage =
+      materialsData.find((m) =>
+        slugify(m.title).includes(slugify(category.label))
+      )?.image || "https://via.placeholder.com/300";
+
+    return getDeepChildren(category, category.label, parentImage);
+  });
+};
 
 const Product = () => {
-  const [products, setProducts] = useState(materialsData);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filters, setFilters] = useState({
     search: "",
-    category: "all",
+    material: "all",
     sortBy: "title",
     sortOrder: "asc",
   });
 
-  // Paginación
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 16; // 4 columnas × 4 filas
+  const productsPerPage = 12;
 
-  // Aplicar filtros
   useEffect(() => {
-    let result = [...products];
+    let result = [];
 
-    // Filtrar por búsqueda
+    if (filters.material === "all") {
+      result = [...materialsData];
+    } else if (filters.material === "everything") {
+      result = getAllProductsFlat();
+    } else {
+      const productosRoot = productsData.find(
+        (item) => item.label === "Productos"
+      );
+
+      const categoryFound = productosRoot?.children.find((cat) => {
+        const normalizedLabel = slugify(cat.label);
+        const normalizedMaterialFilter = slugify(filters.material);
+        return normalizedLabel.includes(
+          normalizedMaterialFilter.replace("industriales", "industrial")
+        );
+      });
+
+      if (categoryFound) {
+        const parentImage =
+          materialsData.find((m) =>
+            slugify(m.title).includes(slugify(categoryFound.label))
+          )?.image || "https://via.placeholder.com/300";
+
+        // También aplicamos la búsqueda profunda cuando se filtra por una categoría específica
+        result = getDeepChildren(
+          categoryFound,
+          categoryFound.label,
+          parentImage
+        );
+      } else {
+        result = [];
+      }
+    }
+
     if (filters.search) {
-      result = result.filter((product) =>
-        product.title.toLowerCase().includes(filters.search.toLowerCase())
-      );
+      result = result.filter((product) => {
+        const title = product.title || product.label || "";
+        const category = product.category || "";
+        const searchSlug = slugify(filters.search);
+
+        return (
+          slugify(title).includes(searchSlug) ||
+          slugify(category).includes(searchSlug)
+        );
+      });
     }
 
-    // Filtrar por categoría
-    if (filters.category !== "all") {
-      result = result.filter(
-        (product) => product.category === filters.category
-      );
-    }
-
-    // Ordenar
     result.sort((a, b) => {
+      const titleA = a.title || a.label || "";
+      const titleB = b.title || b.label || "";
+
       if (filters.sortBy === "title") {
         return filters.sortOrder === "asc"
-          ? a.title.localeCompare(b.title)
-          : b.title.localeCompare(a.title);
+          ? titleA.localeCompare(titleB)
+          : titleB.localeCompare(titleA);
       }
-      // Aquí podrías añadir más criterios de ordenación
       return 0;
     });
 
     setFilteredProducts(result);
-    setCurrentPage(1); // Resetear a primera página al cambiar filtros
-  }, [filters, products]);
+    setCurrentPage(1);
+  }, [filters]);
 
-  // Calcular productos para la página actual
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(
@@ -67,27 +141,16 @@ const Product = () => {
   const handleClearFilters = () => {
     setFilters({
       search: "",
-      category: "all",
+      material: "all",
       sortBy: "title",
       sortOrder: "asc",
     });
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">Nuestros Productos</h1>
-          <p className="text-xl opacity-90">
-            Descubre nuestra amplia gama de metales y materiales
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen ">
+      <div className="w-full max-w-[1920px] mx-auto px-6 py-6">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar de Filtros */}
           <div className="lg:w-1/4">
             <FilterSidebar
               filters={filters}
@@ -97,16 +160,19 @@ const Product = () => {
             />
           </div>
 
-          {/* Contenido Principal */}
           <div className="lg:w-3/4">
-            {/* Barra de herramientas */}
             <div className="bg-white rounded-lg shadow-md p-4 mb-6">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div className="text-gray-600">
-                  Mostrando{" "}
-                  <span className="font-bold">{currentProducts.length}</span> de{" "}
-                  <span className="font-bold">{filteredProducts.length}</span>{" "}
-                  productos
+                  <span className="font-bold">
+                    {filters.material === "everything"
+                      ? "Catálogo Completo: "
+                      : filters.material === "all"
+                      ? "Categorías: "
+                      : "Productos: "}
+                    {filteredProducts.length}
+                  </span>{" "}
+                  items
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -131,7 +197,6 @@ const Product = () => {
               </div>
             </div>
 
-            {/* Grid de Productos */}
             {currentProducts.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
@@ -139,8 +204,6 @@ const Product = () => {
                     <ProductCard key={index} product={product} />
                   ))}
                 </div>
-
-                {/* Paginación */}
                 <Pagination
                   currentPage={currentPage}
                   totalPages={totalPages}
@@ -149,30 +212,12 @@ const Product = () => {
               </>
             ) : (
               <div className="text-center py-12">
-                <div className="text-gray-400 mb-4">
-                  <svg
-                    className="w-24 h-24 mx-auto"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
                 <h3 className="text-xl font-semibold text-gray-600 mb-2">
                   No se encontraron productos
                 </h3>
-                <p className="text-gray-500">
-                  Intenta con otros filtros o términos de búsqueda
-                </p>
                 <button
                   onClick={handleClearFilters}
-                  className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="mt-4 px-6 py-2 bg-primary text-white rounded-lg cursor-pointer"
                 >
                   Limpiar filtros
                 </button>

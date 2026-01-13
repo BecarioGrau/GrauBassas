@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import Hero from "../HeroComponents/Hero";
 import { productsData } from "../../data/ProductsData";
-import { useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import MaterialsSection from "./MaterialsSection";
 import MedidaSection from "./MedidaSection";
 
 const slugify = (text) => {
+  if (!text) return "";
   return text
     .toString()
     .toLowerCase()
@@ -17,14 +18,13 @@ const slugify = (text) => {
 };
 
 const Materials = () => {
+  const navigate = useNavigate();
   const { title } = useParams();
   const productosNode = productsData.find((item) => item.label === "Productos");
 
   const material = productosNode?.children.find(
     (item) => slugify(item.label) === slugify(title)
   );
-  console.log("title", title);
-  console.log("productos:", productosNode);
 
   if (!material) {
     return (
