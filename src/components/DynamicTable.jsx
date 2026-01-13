@@ -16,7 +16,7 @@ const DynamicTable = ({ data }) => {
         Características Técnicas
       </h3>
 
-      {/* VISTA MÓVIL (Cards) */}
+      {/* VISTA MÓVIL */}
       <div className="md:hidden space-y-6">
         {rows.map((row, rIdx) => (
           <div
@@ -85,7 +85,7 @@ const DynamicTable = ({ data }) => {
         ))}
       </div>
 
-      {/* VISTA DESKTOP (Table) */}
+      {/* VISTA DESKTOP */}
       <div className="overflow-x-auto hidden md:block sm:rounded-lg">
         <table className="min-w-full text-sm text-left divide-y divide-[#f0f2f4] divide-[#2a3441]">
           {/* --- THEAD --- */}
