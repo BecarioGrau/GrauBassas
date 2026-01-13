@@ -19,33 +19,6 @@ const ProductDetails = () => {
     <main className="layout-container flex h-full grow flex-col  ">
       <ProductsDetailsHero />
 
-      <div className="flex flex-wrap gap-2 py-4">
-        <a
-          className="text-[#617589] text-gray-900 text-sm font-medium leading-normal hover:text-primary transition-colors"
-          href="/"
-        >
-          Portada
-        </a>
-        <span className="text-[#617589] text-gray-900 text-sm font-medium leading-normal">
-          /
-        </span>
-        <a
-          className="text-[#617589] text-gray-900 text-sm font-medium leading-normal hover:text-primary transition-colors"
-          href="/aceros"
-        >
-          Aceros
-        </a>
-        <span className="text-[#617589] text-gray-900 text-sm font-medium leading-normal">
-          /
-        </span>
-        <p className="text-[#617589] text-gray-900 text-sm font-medium leading-normal hover:text-primary transition-colors">
-          {calidad.title}
-        </p>
-        <span className="text-[#617589] text-gray-900 text-sm font-medium leading-normal">
-          /
-        </span>
-      </div>
-
       <section className="">
         <div className="container mx-auto px-6 ">
           <div className="mb-10 text-center">

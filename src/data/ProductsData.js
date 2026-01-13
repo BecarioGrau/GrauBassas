@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 export const productsData = [
   {
     label: "Productos",
@@ -7,7 +6,7 @@ export const productsData = [
     children: [
       {
         label: "Inoxidables",
-        href: "/products#inoxidables",
+        href: "/materiales/inoxidables",
         children: [
           { label: "Abarcones", href: "/products#" },
           { label: "Acc. Barandillas", href: "/products#" },
@@ -29,7 +28,7 @@ export const productsData = [
       },
       {
         label: "Aluminios",
-        href: "/products#",
+        href: "/materiales/aluminios",
         children: [
           { label: "Acc. Soldar", href: "/products#" },
           { label: "Ángulos", href: "/products#" },
@@ -43,11 +42,11 @@ export const productsData = [
       },
       {
         label: "Aceros",
-        href: "/aceros",
+        href: "/materiales/aceros",
         children: [
           {
             label: "Al Carbono",
-            href: "/aceros#al_carbono",
+            href: "/materials/aceros/al_carbono",
             children: [
               {
                 label: "F-1110",
@@ -65,7 +64,7 @@ export const productsData = [
 
           {
             label: "Cementación",
-            href: "/aceros#cementacion",
+            href: "/materials/aceros#cementacion",
             children: [
               { label: "F-1510", href: "/products/F-1510" },
               { label: "F-1516", href: "/products/F-1516" },
@@ -77,7 +76,7 @@ export const productsData = [
           },
           {
             label: "Resistencia",
-            href: "/aceros#resistencia",
+            href: "/materials/aceros#resistencia",
             children: [
               { label: "F-1252", href: "/products/F-1252" },
               { label: "F-1272", href: "/products/F-1272" },
@@ -85,22 +84,22 @@ export const productsData = [
           },
           {
             label: "Rodamientos",
-            href: "/aceros#rodamientos",
+            href: "/materials/aceros#rodamientos",
             children: [{ label: "F-1310", href: "/products/F-1310" }],
           },
           {
             label: "Alta elasticidad",
-            href: "/aceros#alta_elasticidad",
+            href: "/materials/aceros#alta_elasticidad",
             children: [{ label: "F-1430", href: "/products/F-1430" }],
           },
           {
             label: "Nituración",
-            href: "/aceros#nituracion",
+            href: "/materials/aceros#nituracion",
             children: [{ label: "F-1740", href: "/products/F-1740" }],
           },
           {
             label: "Herramientas",
-            href: "/aceros#herramientas",
+            href: "/materials/aceros#herramientas",
             children: [
               { label: "1.2379", href: "/products/1.2379" },
               { label: "1.2842", href: "/products/1.2842" },
@@ -110,7 +109,7 @@ export const productsData = [
       },
       {
         label: "Hierros",
-        href: "/products#",
+        href: "/materiales/hierros",
         children: [
           {
             label: "Galvanizado",
@@ -142,8 +141,8 @@ export const productsData = [
         ],
       },
       {
-        label: "H. Fundición",
-        href: "/products#",
+        label: "Hierros de Fundición",
+        href: "/materiales/hierros_de_fundicion",
         children: [
           { label: "Chapas", href: "/products#" },
           { label: "Huecos", href: "/products#" },
@@ -153,7 +152,7 @@ export const productsData = [
       },
       {
         label: "Bronce",
-        href: "/products#",
+        href: "/materiales/bronce",
         children: [
           { label: "Chapas", href: "/products#" },
           { label: "Cuadrados", href: "/products#" },
@@ -164,7 +163,7 @@ export const productsData = [
       },
       {
         label: "Latón",
-        href: "/products#",
+        href: "/materiales/laton",
         children: [
           { label: "Accesorios", href: "/products#" },
           { label: "Ángulos", href: "/products#" },
@@ -176,7 +175,7 @@ export const productsData = [
       },
       {
         label: "Cobre",
-        href: "/products#",
+        href: "/materiales/cobre",
         children: [
           { label: "Accesorios", href: "/products#" },
           { label: "Alambres", href: "/products#" },
@@ -188,7 +187,7 @@ export const productsData = [
       },
       {
         label: "Zinc",
-        href: "/products#",
+        href: "/materiales/zinc",
         children: [
           { label: "Ánodos", href: "/products#" },
           { label: "Macizos", href: "/products#" },
@@ -199,7 +198,7 @@ export const productsData = [
       /*  falta por hacer */
       {
         label: "Plásticos de Construcción",
-        href: "/products#",
+        href: "/materiales/plasticos_de_construccion",
         children: [
           { label: "Laminados", href: "/products#" },
           { label: "Tuberías", href: "/products#" },
@@ -207,8 +206,8 @@ export const productsData = [
         ],
       },
       {
-        label: "Plásticos de Industria",
-        href: "/products#",
+        label: "Plásticos Industriales",
+        href: "/materiales/plasticos_industriales",
         children: [
           { label: "Laminados", href: "/products#" },
           { label: "Tuberías", href: "/products#" },
@@ -217,7 +216,7 @@ export const productsData = [
       },
       {
         label: "Suministros",
-        href: "/products#",
+        href: "/materiales/suministros",
         children: [
           { label: "Laminados", href: "/products#" },
           { label: "Tuberías", href: "/products#" },

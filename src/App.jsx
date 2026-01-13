@@ -8,7 +8,7 @@ import ProductDetails from "./components/ProductDetails";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import AvisoLegal from "./pages/AvisoLegal";
-import Aceros from "./components/MaterialsComponents/Aceros";
+import Materials from "./components/MaterialsComponents/Materials";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
-        <Route path="/aceros" element={<Aceros />} />
+        <Route path="/materiales/:title" element={<Materials />} />
       </Routes>
 
       <Footer />

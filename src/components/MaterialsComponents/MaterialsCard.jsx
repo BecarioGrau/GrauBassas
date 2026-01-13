@@ -1,7 +1,7 @@
 import React from "react";
 import useIsMobile from "../../Hooks/useIsMobile";
 
-const CategoryCard = ({ producto }) => {
+const MaterialsCard = ({ producto }) => {
   const isMobile = useIsMobile();
   return (
     <a
@@ -12,7 +12,7 @@ const CategoryCard = ({ producto }) => {
         className={
           isMobile
             ? "absolute top-0 right-0 w-16 h-16  rounded-bl-full bg-primary "
-            : "absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full roup-hover:bg-primary  transition-colors duration-300"
+            : "absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full group-hover:bg-primary  transition-colors duration-300"
         }
       ></div>
       <span
@@ -30,4 +30,4 @@ const CategoryCard = ({ producto }) => {
     </a>
   );
 };
-export default CategoryCard;
+export default MaterialsCard;

@@ -1,5 +1,5 @@
 import React from "react";
-import CategoryCard from "./CategoryCard";
+import MaterialsCard from "./MaterialsCard";
 
 const slugify = (text) => {
   return text
@@ -12,7 +12,7 @@ const slugify = (text) => {
     .replace(/[^\w\d_]/g, "");
 };
 
-const CategorySection = ({ grupo, iconName }) => {
+const MaterialsSection = ({ grupo, iconName }) => {
   const sectionId = slugify(grupo.label);
   return (
     <section id={sectionId} className="mb-12 scroll-mt-28">
@@ -27,10 +27,10 @@ const CategorySection = ({ grupo, iconName }) => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         {grupo.children &&
           grupo.children.map((producto, subIndex) => (
-            <CategoryCard key={subIndex} producto={producto} />
+            <MaterialsCard key={subIndex} producto={producto} />
           ))}
       </div>
     </section>
   );
 };
-export default CategorySection;
+export default MaterialsSection;
