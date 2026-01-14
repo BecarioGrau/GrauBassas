@@ -99,7 +99,7 @@ export const productsData = [
           },
           {
             label: "Herramientas",
-            href: "/materials/aceros#herramientas",
+            href: "/materiales/aceros#herramientas",
             children: [
               { label: "1.2379", href: "/products/1.2379" },
               { label: "1.2842", href: "/products/1.2842" },

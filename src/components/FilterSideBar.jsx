@@ -10,7 +10,7 @@ const FilterSidebar = ({
 
   const materials = [
     { id: "all", name: "Todos los materiales" },
-    { id: "everything", name: "Ver todo el catálogo plano" },
+    { id: "everything", name: "Todos los productos" },
     { id: "inoxidables", name: "Inoxidables" },
     { id: "aluminios", name: "Aluminios" },
     { id: "aceros", name: "Aceros" },
@@ -62,40 +62,6 @@ const FilterSidebar = ({
           >
             Limpiar todo
           </button>
-        </div>
-
-        <div className="mb-6">
-          <label
-            htmlFor="search"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            Buscar producto
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              id="search"
-              value={filters.search}
-              onChange={(e) => onFilterChange({ search: e.target.value })}
-              placeholder="Escribe para buscar..."
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-            />
-            <div className="absolute right-3 top-2.5 text-gray-400">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
 
         <div className="mb-6">

@@ -27,7 +27,7 @@ export const materialsData = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuA_NBbP_gMYpw4m_rxig4daCAfZJ01HRSH9zw_1yOF_XXz5h8_we3NYiFZvTqnE6p7x_HWfTkp3bwPObxUSUo-QOskZ-a7Y4Uqewv2JALP9RCasu5ntLKrdbT9yT9VhtP2eUmP3C8sejd_6-4AJo-ed8zLYtQoYTQBRdO149SmNMpw8xyp3pO__VoU5y66GemqWZS4rfEJ6pI1lh6gAYmPu1JLo8ANGcH6-BJVUxPBcQSmbFrw9dsEDyE8vTOuOSEB1eV_PYzfZZ-U",
   },
   {
-    title: "Hierros de fundicion",
+    title: "Hierros de fundición",
     url: "/materiales/hierros_de_fundicion",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuA_NBbP_gMYpw4m_rxig4daCAfZJ01HRSH9zw_1yOF_XXz5h8_we3NYiFZvTqnE6p7x_HWfTkp3bwPObxUSUo-QOskZ-a7Y4Uqewv2JALP9RCasu5ntLKrdbT9yT9VhtP2eUmP3C8sejd_6-4AJo-ed8zLYtQoYTQBRdO149SmNMpw8xyp3pO__VoU5y66GemqWZS4rfEJ6pI1lh6gAYmPu1JLo8ANGcH6-BJVUxPBcQSmbFrw9dsEDyE8vTOuOSEB1eV_PYzfZZ-U",
