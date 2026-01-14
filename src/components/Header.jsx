@@ -85,11 +85,13 @@ export default function Header() {
     <header className="bg-white border-b-4 border-primary sticky top-0 overflow-visible z-50">
       <nav className="flex flex-wrap lg:flex-nowrap h-20 w-full">
         <div className="w-full lg:w-1/4 bg-white flex items-center justify-between px-4 lg:justify-center lg:px-0 z-50 relative">
-          <img
-            src={logo}
-            alt="GrauBassas Logo"
-            className="h-10 lg:h-12 object-contain"
-          />
+          <a href="/">
+            <img
+              src={logo}
+              alt="GrauBassas Logo"
+              className="h-10 lg:h-12 object-contain"
+            />
+          </a>
 
           <button
             className="lg:hidden text-primary focus:outline-none"
