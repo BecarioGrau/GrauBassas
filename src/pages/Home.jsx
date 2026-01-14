@@ -20,17 +20,16 @@ export default function Home() {
           style={{ clipPath: "polygon(0 0, 100% 0, 80% 100%, 0% 100%)" }}
         ></div>
 
-        <div className="w-full md:w-1/2 p-12 flex flex-col justify-center z-10 relative">
+        <div className="w-full md:w-3/4 p-15 flex flex-col justify-center z-10 relative">
           <div
             className="absolute inset-0 bg-gray-800/95 clip-path-news-bg"
             style={{ clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)" }}
           ></div>
-          <div className="relative z-20 text-white max-w-lg">
+          <div className="relative z-20 text-white max-w-2xl">
             <h3 className="text-4xl font-bold mb-6">
-              Descubra todas <br />
-              nuestras novedades
+              Sobre nosotros <br />
             </h3>
-            <p className="text-sm leading-relaxed mb-10 text-gray-300">
+            <p className="text-lg leading-relaxed mb-10 text-gray-300">
               Almacenes Grau Bassas SL cuenta con más de 65 años de experiencia
               en la venta y distribución de hierro, acero, metal, aluminio y
               plásticos técnicos. Hemos logrado convertirnos en una de las

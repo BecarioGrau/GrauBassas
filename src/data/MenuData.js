@@ -10,8 +10,6 @@ export const menuData = [
 
   ...productsData,
 
-  /* parte del nav  */
-
   {
     label: "Servicios",
     href: "/services",

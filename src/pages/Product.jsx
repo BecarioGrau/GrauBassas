@@ -163,7 +163,7 @@ const Product = () => {
           <div className="lg:w-3/4">
             <div className="bg-white rounded-lg shadow-md p-4 mb-6">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div className="relative hidden md:block w-100">
+                <div className="relative md:block md:w-100 w-full">
                   <input
                     type="text"
                     id="search"

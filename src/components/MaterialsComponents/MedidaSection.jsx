@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 const MedidaSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="pb-12 ">
+    <section className="pb-12 mx-5">
       <div className="container md:mx-auto mx-auto bg-gray-5 shadow-lg text-gray-900  border-t-4 border-primary p-6 rounded-md flex flex-col items-center">
         <div className="text-lg text-center">
           <h4>¿Necesitas un corte a medida?</h4>
-          <p>
+          <p className="md:text-md text-sm">
             Ofrecemos servicios de sierra de cinta y logística rápida para que
             tu proyecto no se detenga
           </p>
