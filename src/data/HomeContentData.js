@@ -1,3 +1,17 @@
+import { ProductsImages } from "./ImagesData";
+export const marqueeItems = [
+  "Inoxidable",
+  "Aluminios",
+  "Aceros",
+  "Hierros",
+  "Bronce",
+  "Latón",
+  "Cobres",
+  "Zinc",
+  "Plásticos de construcción",
+  "Plásticos de industria",
+  "Suministros",
+];
 export const materialsData = [
   {
     title: "Inoxidables",
@@ -9,15 +23,13 @@ export const materialsData = [
   {
     title: "Aluminios",
     url: "/materiales/aluminios",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCxIwM-I1oOKCGrlA1VtdnEQxyZ_uFsBeBJygBK7c4Oa93Wf0EYdfXrLcnzmBlaWqs9F-22kvb3D0x_PU5Uep61j4VLLpojYHytfR0ZI8ze9ODsDT0aHHfuOLUO9Yo0X2vXRxvxjwiu0ZDxFm04-a2ffZ4zeNZisuf8--c1vP-aosud-nqs_un6i7F1kV9YDi42YB53oknyfVohleEAGEQemZLZIqcXTTfX3k0uhQM0uSM48mcBNEnkXw16snxE0YtRLE2sC-RN6yk",
+    image: ProductsImages.Categorias.Aluminio,
   },
 
   {
     title: "Aceros",
     url: "/materiales/aceros",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBkN3Ufh15SSyDLEjG_xKZPqxB35d6nnyUSYtQrShf55gzbJ5cY0BS7sa4xEpo_SVaPiMHBz5h-WdhdThwmiUgbALv2zKStK5B-Dv9-X7s2D-X5TSyn7JIAWCgjBAbynqX1Z0gXNzkYzCAnzc6aHX2UjNtFoiKCAjH9RceVTQOkacXvXuxnLh2GG9-fClLzWFypYx70scrytvOEjjLrm24wZA2gn9jUuFb83FKtvV8vRVODSa7sDM35pxM9C4pWtoj-NkPGfgDIoNs",
+    image: ProductsImages.Categorias.Acero,
   },
 
   {

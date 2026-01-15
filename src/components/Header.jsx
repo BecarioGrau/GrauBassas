@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MenuItem from "./MenuItem";
-import { menuData } from "../data/MenuData";
+import { menuData } from "../data/NavigationData";
 import logo from "../assets/img/Imagotipo_GrauBassas_horizontal.webp";
 import { Link, useLocation } from "react-router-dom";
 

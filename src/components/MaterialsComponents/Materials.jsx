@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Hero from "../HeroComponents/Hero";
-import { productsData } from "../../data/ProductsData";
+import { productsData } from "../../data/NavigationData";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import MaterialsSection from "./MaterialsSection";
 import MedidaSection from "./MedidaSection";
@@ -42,7 +42,7 @@ const Materials = () => {
   );
   const gruposAcero = materialData?.children || [];
   const iconMap = {
-    "Al Carbono": "precision_manufacturing",
+    "Al Carbono": <PrecisionManufacturingOutlinedIcon />,
     Cementación: "Foundation",
     Resistencia: "fitness_center",
     Rodamientos: "settings_backup_restore",

@@ -226,3 +226,31 @@ export const productsData = [
     ],
   },
 ];
+
+export const menuData = [
+  {
+    label: "Portada",
+    href: "/",
+    page: "index",
+  },
+
+  ...productsData,
+
+  {
+    label: "Servicios",
+    href: "/services",
+    page: "servicios",
+  },
+
+  {
+    label: "Sobre Nosotros",
+    href: "/aboutus",
+    page: "nosotros",
+  },
+
+  {
+    label: "Contacto",
+    href: "/contact",
+    page: "contact",
+  },
+];

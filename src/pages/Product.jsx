@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../components/Cards/ProductCard";
 import FilterSidebar from "../components/FilterSideBar";
 import Pagination from "../components/Pagination";
-import { materialsData } from "../data/MaterialsData";
-import { productsData } from "../data/ProductsData";
+import { materialsData } from "../data/HomeContentData";
+import { productsData } from "../data/NavigationData";
 
 const slugify = (text) => {
   if (!text) return "";
