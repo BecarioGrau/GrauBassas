@@ -4,6 +4,13 @@ import { productsData } from "../../data/NavigationData";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import MaterialsSection from "./MaterialsSection";
 import MedidaSection from "./MedidaSection";
+import PrecisionManufacturingOutlinedIcon from "@mui/icons-material/PrecisionManufacturingOutlined";
+import FoundationOutlinedIcon from "@mui/icons-material/FoundationOutlined";
+import FitnessCenterOutlinedIcon from "@mui/icons-material/FitnessCenterOutlined";
+import SettingsBackupRestoreOutlinedIcon from "@mui/icons-material/SettingsBackupRestoreOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
+import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
 
 const slugify = (text) => {
   if (!text) return "";
@@ -43,12 +50,12 @@ const Materials = () => {
   const gruposAcero = materialData?.children || [];
   const iconMap = {
     "Al Carbono": <PrecisionManufacturingOutlinedIcon />,
-    Cementación: "Foundation",
-    Resistencia: "fitness_center",
-    Rodamientos: "settings_backup_restore",
-    "Alta elasticidad": "Timeline",
-    Nituración: "science",
-    Herramientas: "Handyman",
+    Cementación: <FoundationOutlinedIcon />,
+    Resistencia: <FitnessCenterOutlinedIcon />,
+    Rodamientos: <SettingsBackupRestoreOutlinedIcon />,
+    "Alta elasticidad": <TimelineOutlinedIcon />,
+    Nituración: <ScienceOutlinedIcon />,
+    Herramientas: <HandymanOutlinedIcon />,
   };
 
   const { hash } = useLocation();

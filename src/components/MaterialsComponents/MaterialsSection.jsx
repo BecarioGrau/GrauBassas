@@ -18,9 +18,7 @@ const MaterialsSection = ({ grupo, iconName }) => {
   return (
     <section id={sectionId} className="mb-12 scroll-mt-28">
       <div className="flex items-center space-x-4 mb-8 border-b pb-2 border-slate-200">
-        <span className="material-symbols-outlined text-primary text-3xl">
-          {iconName}
-        </span>
+        <span className="text-primary text-3xl">{iconName}</span>
         <h3 className="text-2xl font-display font-bold text-slate-800">
           {grupo.label}
         </h3>

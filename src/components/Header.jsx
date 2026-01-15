@@ -90,6 +90,9 @@ export default function Header() {
               src={logo}
               alt="GrauBassas Logo"
               className="h-10 lg:h-12 object-contain"
+              width={280}
+              height={48}
+              fetchPriority="high"
             />
           </a>
 

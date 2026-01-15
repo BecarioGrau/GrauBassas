@@ -1,5 +1,9 @@
 import React from "react";
 import logo from "../assets/img/imagotipo_GrauBassas_vertical_blanco.webp";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function Footer() {
   return (
@@ -15,18 +19,25 @@ export default function Footer() {
 
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 relative z-10">
         <div className="flex flex-col mb-8 md:mb-0">
-          <img src={logo} alt="GrauBassas Logo" className="h-20 md:h-30 " />
+          <img
+            src={logo}
+            alt="GrauBassas Logo"
+            className="h-20 md:h-30 w-auto object-contain"
+            width={120}
+            height={120}
+            loading="lazy"
+          />
         </div>
 
         <div className="hidden md:block w-px h-24 bg-white/30 mx-8"></div>
 
         <div className="flex flex-col gap-4 text-sm font-light">
           <div className="flex items-center gap-3">
-            <span className="text-2xl material-icons">email</span>
+            <EmailIcon className="text-2xl" />
             <span>info@graubassas.com</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-2xl material-icons">phone</span>
+            <PhoneIcon className="text-2xl" />
             <span>928460044</span>
           </div>
         </div>
@@ -35,7 +46,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4 text-sm font-light">
           <div className="flex items-start gap-3">
-            <span className="text-2xl material-icons">location_on</span>
+            <LocationOnIcon className="text-2xl" />
             <a href="https://maps.app.goo.gl/e47h6BHSc3ox4LrJ6">
               Calle Prof. Lozano, 18, 35008, Las
               <br />
@@ -43,7 +54,7 @@ export default function Footer() {
             </a>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-2xl material-icons">facebook</span>
+            <FacebookIcon className="text-2xl" />
             <span>Facebook</span>
           </div>
         </div>

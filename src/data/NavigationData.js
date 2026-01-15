@@ -50,8 +50,6 @@ export const productsData = [
             children: [
               {
                 label: "F-1110",
-                detail:
-                  "Lorem ipsum dolor sit amet consectetur adipiscing elit donec, imperdiet fusce eleifend condimentum dictumst mus ultricies hac gravida, erat aliquam tempus montes vestibulum senectus primis.",
                 href: "/products/F-1110",
               },
               { label: "F-1120", href: "/products/F-1120" },
