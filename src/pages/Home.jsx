@@ -12,7 +12,7 @@ export default function Home() {
       <section
         className="relative bg-cover bg-center py-0 flex flex-col md:flex-row h-[550px] overflow-hidden"
         style={{
-          backgroundImage: `url('/src/assets/img/o_1fvd17a7c12qldta14eq11nf6hna.jpeg')`,
+          backgroundImage: `url('/src/assets/img/o_1fvd17a7c12qldta14eq11nf6hna.webp')`,
         }}
       >
         <div

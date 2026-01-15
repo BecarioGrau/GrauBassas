@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MenuItem from "./MenuItem";
 import { menuData } from "../data/MenuData";
-import logo from "../assets/img/Imagotipo_GrauBassas_horizontal.png";
+import logo from "../assets/img/Imagotipo_GrauBassas_horizontal.webp";
 import { Link, useLocation } from "react-router-dom";
 
 const MobileMenuItem = ({ item, isActive, closeMenu }) => {

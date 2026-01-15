@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/img/imagotipo_GrauBassas_vertical_blanco.png";
+import logo from "../assets/img/imagotipo_GrauBassas_vertical_blanco.webp";
 
 export default function Footer() {
   return (

@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { CalidadesData } from "../../data/CalidadesData";
 import BackgroundSlideshow from "../BackgroundSlideshow";
-import img1 from "../../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.jpeg";
-import img2 from "../../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.jpg";
-import img3 from "../../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.jpg";
+import img1 from "../../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.webp";
+import img2 from "../../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.webp";
+import img3 from "../../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.webp";
 
 export default function ProductsDetailsHero() {
   const { title } = useParams();
