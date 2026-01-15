@@ -17,12 +17,15 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/products" element={<Product />} />
-        <Route path="/products/:title" element={<ProductDetails />} />
+        <Route path="/productos" element={<Product />} />
+        <Route
+          path="/productos/materiales/:category/:title"
+          element={<ProductDetails />}
+        />
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
-        <Route path="/materiales/:title" element={<Materials />} />
+        <Route path="/productos/materiales/:title" element={<Materials />} />
       </Routes>
 
       <Footer />

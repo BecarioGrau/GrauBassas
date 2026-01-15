@@ -1,35 +1,53 @@
 import React, { useState, useEffect } from "react";
 import ProductsDetailsHero from "./HeroComponents/ProductsDetailsHero";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import DynamicTable from "./DynamicTable";
 
 const ProductDetails = () => {
   const { title } = useParams();
+  const location = useLocation();
   const [calidad, setCalidad] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadData = async () => {
-      setLoading(true);
-      try {
-        // IMPORTANTE: Importamos CalidadesData solo cuando se monta este componente
-        const module = await import("../data/CalidadesData");
-        const found = module.CalidadesData.find((item) => item.title === title);
-        setCalidad(found);
-      } catch (error) {
-        console.error("Error cargando los datos:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    const path = location.pathname.toLowerCase();
+    let jsonToFetch = "";
 
-    loadData();
-  }, [title]);
+    if (path.includes("aceros")) {
+      jsonToFetch = "aceros.json";
+    } else if (path.includes("aluminios")) {
+      jsonToFetch = "aluminios.json";
+    }
+
+    if (!jsonToFetch) {
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
+    fetch(`/data/${jsonToFetch}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Archivo no encontrado");
+        return res.json();
+      })
+      .then((data) => {
+        const found = data.find(
+          (item) =>
+            item.title.trim().toLowerCase() === title.trim().toLowerCase()
+        );
+        setCalidad(found);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        setLoading(false);
+      });
+  }, [title, location.pathname]);
 
   if (loading)
     return (
       <div className="h-screen flex justify-center items-center">
-        Cargando catálogo...
+        Cargando Producto...
       </div>
     );
 
@@ -43,7 +61,6 @@ const ProductDetails = () => {
 
   return (
     <main className="layout-container flex h-full grow flex-col">
-      {/* Pasamos 'calidad' como prop para no tener que volver a buscarla dentro del Hero */}
       <ProductsDetailsHero calidad={calidad} title={title} />
 
       <section className="py-10">
