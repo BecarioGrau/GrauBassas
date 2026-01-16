@@ -39,11 +39,16 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     return pages;
   };
 
+  const handlePageChange = (newPage) => {
+    window.scrollTo(0, 0);
+    onPageChange(newPage);
+  };
+
   return (
     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t">
       <div className="flex items-center justify-center w-full sm:space-x-2">
         <button
-          onClick={() => onPageChange(currentPage - 1)}
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className={`px-2 py-2 sm:px-3 rounded-lg flex items-center gap-1 transition-colors ${
             currentPage === 1
@@ -76,7 +81,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             ) : (
               <button
                 key={index}
-                onClick={() => onPageChange(page)}
+                onClick={() => handlePageChange(page)}
                 className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg text-sm sm:text-base transition-all cursor-pointer ${
                   currentPage === page
                     ? "bg-primary text-white shadow-md"
@@ -90,7 +95,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         </div>
 
         <button
-          onClick={() => onPageChange(currentPage + 1)}
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           className={`px-2 py-2 sm:px-3 rounded-lg flex items-center gap-1 transition-colors ${
             currentPage === totalPages

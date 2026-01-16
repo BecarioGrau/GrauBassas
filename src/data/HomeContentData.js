@@ -16,8 +16,7 @@ export const materialsData = [
   {
     title: "Inoxidables",
     url: "productos/materiales/inoxidables",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCUe7aiCxMKXCVMiLgza9DbqWW8M1e8QgogXhSX3AWrVi_Wgs77a45l_QsjJOYJyP2_EsUm3yKo4swZuXyvfE-bpOjVJVXj8Oy8VgG6CVuq8lHNVRkNUeS-1wM7qiS3V-D34A1E7oD99LnCuO8yecfSWz8AyJB9NVhFyjLy_znLfh8_Ylej9tjB2oO5a_58GzZ5gDmcEvqR2LnTZ1wofyNhaPm5HzvPoNFxsfQedud6cFCC_3kPUnNTkrl1Kr0j019RryZ5LiaNIak",
+    image: ProductsImages.Categorias.Inoxidable,
   },
 
   {
@@ -47,22 +46,19 @@ export const materialsData = [
   {
     title: "Bronce",
     url: "productos/materiales/bronce",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_xckdfZ9R71LCc5aIRdDShWAtJZhtvbzuSxlXfY7ao-TsVfa5mEbACjZwqmCwzEf6e1FzM09cjl6bEaj6m-UXmLOk1Cu8wRj5ZxUVmUoL_ILnnH4NmcyjI_xPlbDT-C17GM7d5IYNAa5zid0CBdsGRuMMlAdU0oF0Y5tNNadDrAGkfytOnhtf-LoUWhBvqVw21sivKbRGi4pS6KkQ1fheNpdOwpVcJnIQIn6oC5yXYuIoHwsdQA-QUZ-EJhH2YttwAzaQhNfFMuk",
+    image: ProductsImages.Categorias.Bronce,
   },
 
   {
     title: "Latón",
     url: "productos/materiales/laton",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCz_SPzHiF-luErJFZgoiCZ6kK7B79_NQSHa0BQV2iMtJwHfiEeuHCX3L8sAgYImwTZoKdYPgDA8QAcXoplp7zZGKP8lYayO3LdNejRyLJuHjlqQ6VEy5Kxw2qD6fUTkcy1OnlW9EvRSff5ArXL9VDXb68UHDAwSpjK6EVFNX_y6BvSL5_ku8SPLCa7lUjufIAsIpwtOAXrjSo7hR2kSsOJi8YZ8-LqlnFZLAsn9KaSk4U6ZCsMFGZK6ECKcYiE3YtQ6mveKqIu19o",
+    image: ProductsImages.Categorias.Laton,
   },
 
   {
     title: "Cobre",
     url: "productos/materiales/cobre",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAa2V0qTmJburqisdvZVNXySpCF4WMfz0WP8CHFmXpuXnVlRqwzMNeE0285dUJi4zg-NPU9FeqOzyGUiWhdyhOfDPbRVS7rEPILFLDNdDdYhqbPDUhr2BpS-cFhFHJ2VrkQMjwMXXbXPN6zhTR1BW44b6FyY5RxO1i1EnGfRIwxyqJgdDkv_sodPv9H0TUmTxqVTfUezAbFEgVUrqYARccJcSAyjq1pmL3sEhhAWuTUkcaJCLKaZ4ivQRXMmR4l04V47Y7icLrAV5g",
+    image: ProductsImages.Categorias.Cobre,
   },
 
   {
