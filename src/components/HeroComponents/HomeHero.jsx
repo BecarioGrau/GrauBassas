@@ -8,7 +8,11 @@ export default function HomeHero() {
   return (
     <section className="relative w-full min-h-[380px] md:min-h-[490px] overflow-hidden bg-white text-white flex flex-col">
       <div className="absolute inset-0 w-full h-full">
-        <BackgroundSlideshow images={[img1, img2, img3]} />
+        <BackgroundSlideshow
+          images={[img1, img2, img3]}
+          loading="eager"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20 md:to-transparent"></div>
       </div>
 

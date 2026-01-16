@@ -1,21 +1,25 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Marquee from "./components/Marquee";
 import { marqueeItems } from "./data/HomeContentData";
 import Header from "./components/Header";
-import Home from "./pages/Home";
-import Product from "./pages/Product";
-import ProductDetails from "./components/ProductDetails";
-import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import AvisoLegal from "./pages/AvisoLegal";
-import Materials from "./components/MaterialsComponents/Materials";
+import { NavigationProvider } from "./context/NavigationContext";
+
+const Home = lazy(() => import("./pages/Home"));
+const Product = lazy(() => import("./pages/Product"));
+const ProductDetails = lazy(() => import("./components/ProductDetails"));
+const Contact = lazy(() => import("./pages/Contact"));
+const AvisoLegal = lazy(() => import("./pages/AvisoLegal"));
+const Materials = lazy(() =>
+  import("./components/MaterialsComponents/Materials")
+);
 
 function App() {
   return (
-    <>
+    <NavigationProvider>
       <Marquee items={marqueeItems} />
       <Header />
-
       <Routes>
         <Route path="/productos" element={<Product />} />
         <Route
@@ -27,9 +31,8 @@ function App() {
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/productos/materiales/:title" element={<Materials />} />
       </Routes>
-
       <Footer />
-    </>
+    </NavigationProvider>
   );
 }
 
