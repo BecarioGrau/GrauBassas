@@ -81,6 +81,7 @@ const FilterSidebar = ({
                     onChange={(e) =>
                       onFilterChange({ material: e.target.value })
                     }
+                    onClick={() => setIsMobileFiltersOpen(false)}
                     className="mr-3 accent-primary"
                   />
                   <span className="text-gray-700">{material.name}</span>
