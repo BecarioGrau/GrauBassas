@@ -1,5 +1,5 @@
 import React from "react";
-import useIsMobile from "../../Hooks/useIsMobile";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const MaterialsCard = ({ producto }) => {
   const isMobile = useIsMobile();

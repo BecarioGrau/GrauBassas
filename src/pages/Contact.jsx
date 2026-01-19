@@ -1,10 +1,15 @@
 import React from "react";
 import Hero from "../components/HeroComponents/Hero";
-import useIsMobile from "../Hooks/useIsMobile";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import useIsMobile from "../hooks/useIsMobile";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import ScheduleIcon from "@mui/icons-material/Schedule";
+
+const LocationIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5" />
+  </svg>
+);
 
 export default function Contact() {
   const isMobile = useIsMobile();
@@ -187,7 +192,7 @@ export default function Contact() {
               <div className="bg-gray-50 p-6 border-l-4 border-primary shadow-lg rounded-sm">
                 <div className="flex items-center space-x-3 mb-2">
                   <span className="material-icons text-primary">
-                    <LocationOnIcon />
+                    <LocationIcon />
                   </span>
                   <h3 className="font-bold text-gray-800 uppercase">
                     Ubicación
