@@ -86,17 +86,24 @@ const Materials = () => {
     );
   }
 
+  const desktopHeroHeight = "380px";
+  const mobileHeroHeight = "360px";
   const gruposAcero = material.children || [];
   const heroDescription = `Descubre nuestro catálogo de ${material.label.toLowerCase()} seleccionado para garantizar calidad y disponibilidad.`;
 
   return (
     <>
-      <Hero title={material.label} description={heroDescription} />
+      <Hero
+        title={material.label}
+        description={heroDescription}
+        desktopHeroHeight={desktopHeroHeight}
+        mobileHeroHeight={mobileHeroHeight}
+      />
 
-      <main className="container mx-auto px-4 py-8">
-        <header className="flex items-center justify-center mb-12">
+      <main className="container mx-auto px-4 pb-8">
+        <header className="flex items-center justify-center mb-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center">
-            Selector de categorías
+            Selector de calidades
           </h2>
         </header>
 

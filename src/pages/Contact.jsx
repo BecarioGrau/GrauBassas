@@ -1,8 +1,16 @@
 import React from "react";
 import Hero from "../components/HeroComponents/Hero";
+import useIsMobile from "../Hooks/useIsMobile";
 
 export default function Contact() {
-  const heroTile = (
+  const isMobile = useIsMobile();
+  const desktopHeroHeight = "430px";
+  const mobileHeroHeight = "400px";
+  const heroTile = isMobile ? (
+    <>
+      Ponte en contacto <br /> con nosotros
+    </>
+  ) : (
     <>
       Ponte en <br /> contacto con nosotros
     </>
@@ -21,7 +29,12 @@ export default function Contact() {
 
   return (
     <>
-      <Hero title={heroTile} description={heroDescription} />
+      <Hero
+        title={heroTile}
+        description={heroDescription}
+        desktopHeroHeight={desktopHeroHeight}
+        mobileHeroHeight={mobileHeroHeight}
+      />
 
       <main className="flex-grow container mx-auto px-4 md:px-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -235,7 +248,7 @@ export default function Contact() {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439.7093846819077!2d-15.418271416814473!3d28.15637801364156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409551dd504ca5%3A0xeb42ec88b9e07be2!2sAlmacenes%20Grau%20Bassas%20S.L.!5e0!3m2!1ses!2ses!4v1766487167246!5m2!1ses!2ses"
                 className="w-full h-full"
-                style={{ border: 1 }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

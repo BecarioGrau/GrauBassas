@@ -4,9 +4,20 @@ import img1 from "../../assets/img/o_1fvaougrmgun1s7q1o9l1fb21edqa.webp";
 import img2 from "../../assets/img/o_1fvsfhcj91j0n17is1jq81lotllpb.webp";
 import img3 from "../../assets/img/o_1fvsfhcj917q7ovtg4f18qna4c.webp";
 
-export default function Hero({ title, description }) {
+export default function Hero({
+  title,
+  description,
+  desktopHeroHeight,
+  mobileHeroHeight,
+}) {
   return (
-    <section className="relative w-full h-[500px] md:h-[440px] overflow-hidden bg-gray-800 text-white">
+    <section
+      className="relative w-full overflow-hidden bg-gray-800 text-white h-[var(--m-height)] md:h-[var(--d-height)]"
+      style={{
+        "--m-height": mobileHeroHeight,
+        "--d-height": desktopHeroHeight,
+      }}
+    >
       <BackgroundSlideshow images={[img1, img2, img3]} />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent img"></div>
