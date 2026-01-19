@@ -1,9 +1,6 @@
 import React from "react";
 import logo from "../assets/img/imagotipo_GrauBassas_vertical_blanco.webp";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { PhoneIcon, EmailIcon, FacebookIcon, LocationIcon } from "./Icons";
 
 export default function Footer() {
   return (
@@ -46,7 +43,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4 text-sm font-light">
           <div className="flex items-start gap-3">
-            <LocationOnIcon className="text-2xl" />
+            <LocationIcon className="text-2xl" />
             <a href="https://maps.app.goo.gl/e47h6BHSc3ox4LrJ6">
               Calle Prof. Lozano, 18, 35008, Las
               <br />

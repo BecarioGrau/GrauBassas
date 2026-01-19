@@ -4,14 +4,23 @@ import Hero from "../HeroComponents/Hero";
 import { useNavigation } from "../../context/NavigationContext";
 import MaterialsSection from "./MaterialsSection";
 import MedidaSection from "./MedidaSection";
+import {
+  PrecisionManufacturingIcon,
+  FoundationIcon,
+  FitnessCenterIcon,
+  SettingsBackupRestoreIcon,
+  TimelineIcon,
+  ScienceIcon,
+  HandymanIcon,
+} from "../Icons";
 
-import PrecisionManufacturingOutlined from "@mui/icons-material/PrecisionManufacturingOutlined";
+/* import PrecisionManufacturingOutlined from "@mui/icons-material/PrecisionManufacturingOutlined";
 import FoundationOutlined from "@mui/icons-material/FoundationOutlined";
 import FitnessCenterOutlined from "@mui/icons-material/FitnessCenterOutlined";
 import SettingsBackupRestoreOutlined from "@mui/icons-material/SettingsBackupRestoreOutlined";
 import TimelineOutlined from "@mui/icons-material/TimelineOutlined";
 import ScienceOutlined from "@mui/icons-material/ScienceOutlined";
-import HandymanOutlined from "@mui/icons-material/HandymanOutlined";
+import HandymanOutlined from "@mui/icons-material/HandymanOutlined"; */
 
 const slugify = (text) => {
   if (!text) return "";
@@ -26,13 +35,13 @@ const slugify = (text) => {
 };
 
 const ICON_MAP = {
-  "Al Carbono": <PrecisionManufacturingOutlined />,
-  Cementación: <FoundationOutlined />,
-  Resistencia: <FitnessCenterOutlined />,
-  Rodamientos: <SettingsBackupRestoreOutlined />,
-  "Alta elasticidad": <TimelineOutlined />,
-  Nituración: <ScienceOutlined />,
-  Herramientas: <HandymanOutlined />,
+  "Al Carbono": <PrecisionManufacturingIcon />,
+  Cementación: <FoundationIcon />,
+  Resistencia: <FitnessCenterIcon />,
+  Rodamientos: <SettingsBackupRestoreIcon />,
+  "Alta elasticidad": <TimelineIcon />,
+  Nituración: <ScienceIcon />,
+  Herramientas: <HandymanIcon />,
 };
 
 const Materials = () => {
