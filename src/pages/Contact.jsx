@@ -1,6 +1,10 @@
 import React from "react";
 import Hero from "../components/HeroComponents/Hero";
 import useIsMobile from "../Hooks/useIsMobile";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import ScheduleIcon from "@mui/icons-material/Schedule";
 
 export default function Contact() {
   const isMobile = useIsMobile();
@@ -183,14 +187,14 @@ export default function Contact() {
               <div className="bg-gray-50 p-6 border-l-4 border-primary shadow-lg rounded-sm">
                 <div className="flex items-center space-x-3 mb-2">
                   <span className="material-icons text-primary">
-                    location_on
+                    <LocationOnIcon />
                   </span>
                   <h3 className="font-bold text-gray-800 uppercase">
                     Ubicación
                   </h3>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Calle Prof. Lozano, 18
+                  Calle Prof. Lozano, 18/20
                   <br />
                   35008, Las Palmas
                   <br />
@@ -200,7 +204,9 @@ export default function Contact() {
 
               <div className="bg-gray-50 p-6 border-l-4 border-primary shadow-lg rounded-sm">
                 <div className="flex items-center space-x-3 mb-2">
-                  <span className="material-icons text-primary">phone</span>
+                  <span className="material-icons text-primary">
+                    <PhoneIcon />
+                  </span>
                   <h3 className="font-bold text-gray-800 uppercase">
                     Teléfono
                   </h3>
@@ -218,7 +224,9 @@ export default function Contact() {
 
               <div className="bg-gray-50 p-6 border-l-4 border-primary shadow-lg rounded-sm">
                 <div className="flex items-center space-x-3 mb-2">
-                  <span className="material-icons text-primary">email</span>
+                  <span className="material-icons text-primary">
+                    <EmailIcon />
+                  </span>
                   <h3 className="font-bold text-gray-800 uppercase">Email</h3>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -233,7 +241,9 @@ export default function Contact() {
 
               <div className="bg-gray-50 p-6 border-l-4 border-primary shadow-lg rounded-sm">
                 <div className="flex items-center space-x-3 mb-2">
-                  <span className="material-icons text-primary">schedule</span>
+                  <span className="material-icons text-primary">
+                    <ScheduleIcon />
+                  </span>
                   <h3 className="font-bold text-gray-800 uppercase">Horario</h3>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
