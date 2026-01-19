@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ProductsDetailsHero from "./HeroComponents/ProductsDetailsHero";
 import { useParams, useLocation } from "react-router-dom";
 import DynamicTable from "./DynamicTable";
@@ -8,6 +9,12 @@ const ProductDetails = () => {
   const location = useLocation();
   const [calidad, setCalidad] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const pathParts = location.pathname.split("/");
+  const categorySlug = pathParts[3];
+  const categoryName = categorySlug
+    ? categorySlug.charAt(0).toUpperCase() + categorySlug.slice(1)
+    : "";
 
   useEffect(() => {
     const path = location.pathname.toLowerCase();
@@ -62,6 +69,34 @@ const ProductDetails = () => {
   return (
     <main className="layout-container flex h-full grow flex-col">
       <ProductsDetailsHero calidad={calidad} title={title} />
+
+      <section className="px-6 flex items-center gap-2 text-sm font-semibold">
+        <Link to="/productos" className="text-gray-900 hover:text-primary">
+          Productos
+        </Link>
+        <span className="text-gray-400 ">/</span>
+        <Link
+          to="/productos/materiales"
+          className="text-gray-900 hover:text-primary"
+        >
+          Materiales
+        </Link>
+
+        {categoryName && (
+          <>
+            <span className="text-gray-400">/</span>
+            <Link
+              to={`/productos/materiales/${categorySlug}`}
+              className="text-gray-900 hover:text-primary"
+            >
+              {categoryName}
+            </Link>
+          </>
+        )}
+        <span className="text-gray-400">/</span>
+
+        <span className="font-semibold text-gray-900 capitalize">{title}</span>
+      </section>
 
       <section className="py-10">
         <div className="container mx-auto px-6">
