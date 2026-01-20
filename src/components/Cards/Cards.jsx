@@ -5,7 +5,7 @@ export default function Cards() {
   return (
     <section className="pb-10 min-h-[700px]">
       <div className="container mx-auto px-6">
-        <div className="mb-12">
+        <div className="mb-6">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900  mb-4 tracking-tight">
             Catálogo de Materiales
           </h2>

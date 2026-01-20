@@ -66,7 +66,7 @@ export const HandymanIcon = () => (
 );
 export const LayersIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-    <path d="m11.99 18.54-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27z" />
+    <path d="m11.99 18.54-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27zm0-11.47L17.74 9 12 13.47 6.26 9z" />
   </svg>
 );
 export const TriangleIcon = () => (
@@ -86,6 +86,11 @@ export const HexagonIcon = () => (
 );
 export const CircleIcon = () => (
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-    <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8" />
+    <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2" />
+  </svg>
+);
+export const TubosIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+    <path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12m10 6c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6" />
   </svg>
 );

@@ -63,7 +63,7 @@ export default function Footer() {
           <a href="/aviso-legal">Aviso Legal</a> |{" "}
           <a href="#">Terminos y Condiciones</a>
         </div>
-        <div>Grau Bassas. Todos los derechos reservados.</div>
+        <div className="text-white">Copyright © 2026 | GRAU BASSAS S.L.</div>
       </div>
     </footer>
   );

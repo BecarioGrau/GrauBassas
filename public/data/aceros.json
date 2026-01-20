@@ -50,10 +50,6 @@
     },
     "cortes": [
       {
-        "label": "Macizo",
-        "href": "#"
-      },
-      {
         "label": "Chapa",
         "href": "#"
       },
@@ -67,6 +63,14 @@
       },
       {
         "label": "Hexágono",
+        "href": "#"
+      },
+      {
+        "label": "Redondo",
+        "href": "#"
+      },
+      {
+        "label": "Tubo",
         "href": "#"
       }
     ]
@@ -122,7 +126,7 @@
     },
     "cortes": [
       {
-        "label": "Hexagonal",
+        "label": "Hexágono",
         "href": "#"
       },
       {
@@ -185,10 +189,6 @@
       ]
     },
     "cortes": [
-      {
-        "label": "Macizo",
-        "href": "#"
-      },
       {
         "label": "Chapa",
         "href": "#"
@@ -313,10 +313,6 @@
       ]
     },
     "cortes": [
-      {
-        "label": "Macizo",
-        "href": "#"
-      },
       {
         "label": "Chapa",
         "href": "#"

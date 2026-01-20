@@ -10,15 +10,16 @@ import {
   SquareIcon,
   HexagonIcon,
   CircleIcon,
+  TubosIcon,
 } from "./Icons";
 
 const ICON_MAP = {
-  Macizo: "M",
   Chapa: <LayersIcon />,
   Ángulo: <TriangleIcon />,
   Cuadrado: <SquareIcon />,
   Hexágono: <HexagonIcon />,
   Redondo: <CircleIcon />,
+  Tubo: <TubosIcon />,
 };
 
 const ProductDetails = () => {
