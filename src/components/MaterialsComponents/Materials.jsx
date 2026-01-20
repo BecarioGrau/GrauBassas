@@ -14,14 +14,6 @@ import {
   HandymanIcon,
 } from "../Icons";
 
-/* import PrecisionManufacturingOutlined from "@mui/icons-material/PrecisionManufacturingOutlined";
-import FoundationOutlined from "@mui/icons-material/FoundationOutlined";
-import FitnessCenterOutlined from "@mui/icons-material/FitnessCenterOutlined";
-import SettingsBackupRestoreOutlined from "@mui/icons-material/SettingsBackupRestoreOutlined";
-import TimelineOutlined from "@mui/icons-material/TimelineOutlined";
-import ScienceOutlined from "@mui/icons-material/ScienceOutlined";
-import HandymanOutlined from "@mui/icons-material/HandymanOutlined"; */
-
 const slugify = (text) => {
   if (!text) return "";
   return text
@@ -53,12 +45,12 @@ const Materials = () => {
     if (!productsData || loading) return null;
 
     const productosNode = productsData.find(
-      (item) => item.label === "Productos"
+      (item) => item.label === "Productos",
     );
     const targetSlug = slugify(title);
 
     return productosNode?.children.find(
-      (item) => slugify(item.label) === targetSlug
+      (item) => slugify(item.label) === targetSlug,
     );
   }, [productsData, title, loading]);
 

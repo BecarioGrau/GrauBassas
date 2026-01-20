@@ -4,7 +4,22 @@ import ProductsDetailsHero from "./HeroComponents/ProductsDetailsHero";
 import { useParams, useLocation } from "react-router-dom";
 import DynamicTable from "./DynamicTable";
 import MaterialsCard from "./MaterialsComponents/MaterialsCard";
-import { ScheduleIcon } from "./Icons";
+import {
+  LayersIcon,
+  TriangleIcon,
+  SquareIcon,
+  HexagonIcon,
+  CircleIcon,
+} from "./Icons";
+
+const ICON_MAP = {
+  Macizo: "M",
+  Chapa: <LayersIcon />,
+  Ángulo: <TriangleIcon />,
+  Cuadrado: <SquareIcon />,
+  Hexagonal: <HexagonIcon />,
+  Redondo: <CircleIcon />,
+};
 
 const ProductDetails = () => {
   const { title } = useParams();
@@ -42,7 +57,7 @@ const ProductDetails = () => {
       .then((data) => {
         const found = data.find(
           (item) =>
-            item.title.trim().toLowerCase() === title.trim().toLowerCase()
+            item.title.trim().toLowerCase() === title.trim().toLowerCase(),
         );
         setCalidad(found);
         setLoading(false);
@@ -116,8 +131,8 @@ const ProductDetails = () => {
                   label: corte.label,
                   href: corte.href || "#",
                   tag: "Ver medidas",
-                  icon: <ScheduleIcon />,
                 }}
+                icon={ICON_MAP[corte.label]}
               />
             ))}
           </div>

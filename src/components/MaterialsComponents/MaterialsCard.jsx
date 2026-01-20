@@ -16,7 +16,7 @@ const MaterialsCard = ({ producto, icon }) => {
         }
       >
         {icon && (
-          <div className="z-20 scale-90 translate-x-1 translate-y-1">
+          <div className="z-20 scale-90 translate-x-5.5 translate-y-3 group-hover:text-white">
             {icon}
           </div>
         )}

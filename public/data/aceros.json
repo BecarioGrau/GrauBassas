@@ -51,23 +51,23 @@
     "cortes": [
       {
         "label": "Macizo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Chapa",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Ángulo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Cuadrado",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
+      },
+      {
+        "label": "Hexágono",
+        "href": "#"
       }
     ]
   },
@@ -122,19 +122,16 @@
     },
     "cortes": [
       {
-        "label": "Macizo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "label": "Hexagonal",
+        "href": "#"
       },
       {
-        "label": "Chapa",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "label": "Cuadrado",
+        "href": "#"
       },
       {
-        "label": "Ángulo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "label": "Redondo",
+        "href": "#"
       }
     ]
   },
@@ -190,18 +187,15 @@
     "cortes": [
       {
         "label": "Macizo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Chapa",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Ángulo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       }
     ]
   },
@@ -256,19 +250,16 @@
     },
     "cortes": [
       {
-        "label": "Macizo",
-        "href": "#",
-        "image": "/imgs/default.webp"
-      },
-      {
-        "label": "Chapa",
-        "href": "#",
-        "image": "/imgs/default.webp"
-      },
-      {
         "label": "Ángulo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
+      },
+      {
+        "label": "Cuadrado",
+        "href": "#"
+      },
+      {
+        "label": "Redondo",
+        "href": "#"
       }
     ]
   },
@@ -324,18 +315,15 @@
     "cortes": [
       {
         "label": "Macizo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Chapa",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Ángulo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       }
     ]
   },
@@ -391,13 +379,15 @@
     "cortes": [
       {
         "label": "Chapa",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
       },
       {
         "label": "Ángulo",
-        "href": "#",
-        "image": "/imgs/default.webp"
+        "href": "#"
+      },
+      {
+        "label": "Redondo",
+        "href": "#"
       }
     ]
   }
