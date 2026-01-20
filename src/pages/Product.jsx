@@ -4,7 +4,7 @@ import FilterSidebar from "../components/FilterSideBar";
 import Pagination from "../components/Pagination";
 import { materialsData } from "../data/HomeContentData";
 import { useNavigation } from "../context/NavigationContext";
-
+import { useLocation } from "react-router-dom";
 const slugify = (text) => {
   if (!text) return "";
   return text
@@ -19,17 +19,33 @@ const slugify = (text) => {
 
 const Product = () => {
   const { productsData, loading } = useNavigation();
+  const location = useLocation();
+
+  const getInitialMaterialFilter = () => {
+    const params = new URLSearchParams(location.search);
+    return params.get("view") === "categories" ? "all" : "everything";
+  };
+
   const [filteredProducts, setFilteredProducts] = useState([]);
+
   const [filters, setFilters] = useState({
     search: "",
-    material: "all",
+    material: getInitialMaterialFilter(),
     sortBy: "title",
     sortOrder: "asc",
   });
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const view = params.get("view");
+    if (view === "categories") {
+      setFilters((prev) => ({ ...prev, material: "all" }));
+    }
+  }, [location.search]);
+
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
 
-  // Función recursiva para obtener hijos
   const getDeepChildren = (node, categoryLabel, parentImage) => {
     if (!node.children || node.children.length === 0) {
       return [
@@ -42,41 +58,41 @@ const Product = () => {
       ];
     }
     return node.children.flatMap((child) =>
-      getDeepChildren(child, categoryLabel, parentImage)
+      getDeepChildren(child, categoryLabel, parentImage),
     );
   };
 
   useEffect(() => {
-    if (loading) return;
+    if (loading || !productsData) return;
 
     let result = [];
     const productosRoot = productsData.find(
-      (item) => item.label === "Productos"
+      (item) => item.label === "Productos",
     );
 
-    if (filters.material === "all") {
-      result = [...materialsData];
-    } else if (filters.material === "everything") {
+    if (filters.material === "everything") {
       if (productosRoot?.children) {
         result = productosRoot.children.flatMap((category) => {
           const parentImage =
             materialsData.find((m) =>
-              slugify(m.title).includes(slugify(category.label))
+              slugify(m.title).includes(slugify(category.label)),
             )?.image || "";
           return getDeepChildren(category, category.label, parentImage);
         });
       }
+    } else if (filters.material === "all") {
+      result = [...materialsData];
     } else {
       const categoryFound = productosRoot?.children.find((cat) =>
         slugify(cat.label).includes(
-          slugify(filters.material).replace("industriales", "industrial")
-        )
+          slugify(filters.material).replace("industriales", "industrial"),
+        ),
       );
 
       if (categoryFound) {
         const parentImage =
           materialsData.find((m) =>
-            slugify(m.title).includes(slugify(categoryFound.label))
+            slugify(m.title).includes(slugify(categoryFound.label)),
           )?.image || "";
         result = categoryFound.children.map((child) => ({
           ...child,
@@ -87,17 +103,15 @@ const Product = () => {
       }
     }
 
-    // Filtro de búsqueda
     if (filters.search) {
       const searchSlug = slugify(filters.search);
       result = result.filter(
         (p) =>
           slugify(p.title || p.label).includes(searchSlug) ||
-          slugify(p.category || "").includes(searchSlug)
+          slugify(p.category || "").includes(searchSlug),
       );
     }
 
-    // Ordenación
     result.sort((a, b) => {
       const titleA = a.title || a.label || "";
       const titleB = b.title || b.label || "";
@@ -110,18 +124,18 @@ const Product = () => {
     setCurrentPage(1);
   }, [filters, loading, productsData]);
 
+  const currentProducts = filteredProducts.slice(
+    (currentPage - 1) * productsPerPage,
+    currentPage * productsPerPage,
+  );
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
   if (loading)
     return (
       <div className="min-h-screen flex items-center justify-center">
         Cargando catálogo...
       </div>
     );
-
-  const currentProducts = filteredProducts.slice(
-    (currentPage - 1) * productsPerPage,
-    currentPage * productsPerPage
-  );
-  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -136,7 +150,7 @@ const Product = () => {
               onClearFilters={() =>
                 setFilters({
                   search: "",
-                  material: "all",
+                  material: "everything",
                   sortBy: "title",
                   sortOrder: "asc",
                 })
@@ -183,10 +197,8 @@ const Product = () => {
                 />
               </>
             ) : (
-              <div className="text-center py-20">
-                <h3 className="text-gray-500 text-xl">
-                  No se encontraron resultados
-                </h3>
+              <div className="text-center py-20 text-gray-500 text-xl">
+                No se encontraron resultados
               </div>
             )}
           </div>

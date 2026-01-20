@@ -9,8 +9,8 @@ const FilterSidebar = ({
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   const materials = [
-    { id: "all", name: "Todos los materiales" },
     { id: "everything", name: "Todos los productos" },
+    { id: "all", name: "Materiales" },
     { id: "inoxidables", name: "Inoxidables" },
     { id: "aluminios", name: "Aluminios" },
     { id: "aceros", name: "Aceros" },
@@ -32,9 +32,7 @@ const FilterSidebar = ({
       >
         <span className="font-medium">Filtros</span>
         <svg
-          className={`w-5 h-5 transform transition-transform ${
-            isMobileFiltersOpen ? "rotate-180" : ""
-          }`}
+          className={`w-5 h-5 transform transition-transform ${isMobileFiltersOpen ? "rotate-180" : ""}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -49,10 +47,7 @@ const FilterSidebar = ({
       </button>
 
       <div
-        className={`
-        ${isMobileFiltersOpen ? "block" : "hidden"}
-        lg:block bg-white rounded-lg shadow-md p-6 h-180
-      `}
+        className={`${isMobileFiltersOpen ? "block" : "hidden"} lg:block bg-white rounded-lg shadow-md p-6`}
       >
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-gray-800">Filtros</h2>
@@ -66,11 +61,11 @@ const FilterSidebar = ({
 
         <div className="mb-6">
           <h3 className="font-semibold text-gray-700 mb-3">Materiales</h3>
-          <div className="space-y-2 max-h-95 overflow-y-auto pr-2">
+          <div className="space-y-2 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
             {materials.map((material) => (
               <label
                 key={material.id}
-                className="flex items-center justify-between p-2 hover:bg-gray-50 rounded cursor-pointer"
+                className="flex items-center justify-between p-2 hover:bg-gray-50 rounded cursor-pointer transition-colors"
               >
                 <div className="flex items-center">
                   <input
@@ -81,22 +76,23 @@ const FilterSidebar = ({
                     onChange={(e) =>
                       onFilterChange({ material: e.target.value })
                     }
-                    className="mr-3 accent-primary"
+                    className="mr-3 accent-primary w-4 h-4"
                   />
-                  <span className="text-gray-700">{material.name}</span>
+                  <span
+                    className={`text-sm ${filters.material === material.id ? "font-bold text-primary" : "text-gray-700"}`}
+                  >
+                    {material.name}
+                  </span>
                 </div>
-                <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                  {material.count}
-                </span>
               </label>
             ))}
           </div>
         </div>
 
         <div className="bg-blue-50 border border-primary/10 rounded-lg p-4">
-          <p className="text-sm text-primary">
-            Se encontraron <span className="font-bold">{totalProducts}</span>{" "}
-            productos
+          <p className="text-sm text-primary italic">
+            Mostrando <span className="font-bold">{totalProducts}</span>{" "}
+            resultados
           </p>
         </div>
       </div>

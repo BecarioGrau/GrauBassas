@@ -93,7 +93,7 @@ const ProductDetails = () => {
         </Link>
         <span className="text-gray-400 ">/</span>
         <Link
-          to="/productos/materiales"
+          to="/productos?view=categories"
           className="text-gray-900 hover:text-primary"
         >
           Materiales
