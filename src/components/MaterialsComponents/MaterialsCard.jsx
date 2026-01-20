@@ -16,7 +16,13 @@ const MaterialsCard = ({ producto, icon }) => {
         }
       >
         {icon && (
-          <div className="z-20 scale-90 translate-x-5.5 translate-y-3 group-hover:text-white">
+          <div
+            className={
+              isMobile
+                ? "z-20 scale-90 translate-x-5.5 translate-y-3 text-white"
+                : "z-20 scale-90 translate-x-5.5 translate-y-3 group-hover:text-white"
+            }
+          >
             {icon}
           </div>
         )}

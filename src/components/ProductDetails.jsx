@@ -17,7 +17,7 @@ const ICON_MAP = {
   Chapa: <LayersIcon />,
   Ángulo: <TriangleIcon />,
   Cuadrado: <SquareIcon />,
-  Hexagonal: <HexagonIcon />,
+  Hexágono: <HexagonIcon />,
   Redondo: <CircleIcon />,
 };
 
