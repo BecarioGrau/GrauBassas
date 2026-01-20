@@ -4,6 +4,7 @@ import cobre from "../assets/img/MaterialesImg/cobre.webp";
 import bronce from "../assets/img/MaterialesImg/bronce.webp";
 import laton from "../assets/img/MaterialesImg/laton.webp";
 import inoxidables from "../assets/img/MaterialesImg/inoxidable.webp";
+import hierros from "../assets/img/MaterialesImg/hierro.webp";
 
 export const ProductsImages = {
   Categorias: {
@@ -13,5 +14,6 @@ export const ProductsImages = {
     Bronce: bronce,
     Laton: laton,
     Inoxidable: inoxidables,
+    Hierro: hierros,
   },
 };

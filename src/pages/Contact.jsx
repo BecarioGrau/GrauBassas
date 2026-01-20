@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/HeroComponents/Hero";
-import useIsMobile from "../hooks/useIsMobile";
+import useIsMobile from "../../hooks/useIsMobile";
 import {
   LocationIcon,
   PhoneIcon,

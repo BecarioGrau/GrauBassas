@@ -1,7 +1,7 @@
 import React from "react";
 import useIsMobile from "../../hooks/useIsMobile";
 
-const MaterialsCard = ({ producto }) => {
+const MaterialsCard = ({ producto, icon }) => {
   const isMobile = useIsMobile();
   return (
     <a
@@ -14,7 +14,13 @@ const MaterialsCard = ({ producto }) => {
             ? "absolute top-0 right-0 w-16 h-16  rounded-bl-full bg-primary "
             : "absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full group-hover:bg-primary  transition-colors duration-300"
         }
-      ></div>
+      >
+        {icon && (
+          <div className="z-20 scale-90 translate-x-1 translate-y-1">
+            {icon}
+          </div>
+        )}
+      </div>
       <span
         className={
           isMobile

@@ -11,7 +11,7 @@ const DynamicTable = ({ data }) => {
     return [...acc, col];
   }, []);
   return (
-    <div className="my-20 max-w-5xl mx-auto">
+    <div className="mb-10 mt-5 max-w-5xl mx-auto">
       <h3 className=" text-2xl font-bold text-gray-900 text-[#111418] mb-6">
         Características Técnicas
       </h3>

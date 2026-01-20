@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import ProductsDetailsHero from "./HeroComponents/ProductsDetailsHero";
 import { useParams, useLocation } from "react-router-dom";
 import DynamicTable from "./DynamicTable";
+import MaterialsCard from "./MaterialsComponents/MaterialsCard";
+import { ScheduleIcon } from "./Icons";
 
 const ProductDetails = () => {
   const { title } = useParams();
@@ -101,30 +103,22 @@ const ProductDetails = () => {
       <section className="py-10">
         <div className="container mx-auto px-6">
           <div className="mb-10 text-center">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
-              Catálogo de Cortes
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">
+              Formatos de corte
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {calidad.cortes?.map((corte, idx) => (
-              <a
+            {calidad.cortes.map((corte, idx) => (
+              <MaterialsCard
                 key={idx}
-                className="h-[200px] group relative flex flex-col bg-surface-light rounded-xl overflow-hidden border border-border-light hover:border-primary/50 hover:shadow-lg hover:text-white hover:bg-primary transition-all duration-300"
-                href={corte.href}
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                  <div
-                    className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${corte.image})` }}
-                  />
-                </div>
-                <div className="p-1 flex flex-col gap-1">
-                  <div className="flex justify-center items-center">
-                    <h3 className="text-lg font-bold">{corte.label}</h3>
-                  </div>
-                </div>
-              </a>
+                producto={{
+                  label: corte.label,
+                  href: corte.href || "#",
+                  tag: "Ver medidas",
+                  icon: <ScheduleIcon />,
+                }}
+              />
             ))}
           </div>
         </div>
