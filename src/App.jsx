@@ -11,9 +11,10 @@ const Product = lazy(() => import("./pages/Product"));
 const ProductDetails = lazy(() => import("./components/ProductDetails"));
 const Contact = lazy(() => import("./pages/Contact"));
 const AvisoLegal = lazy(() => import("./pages/AvisoLegal"));
-const Materials = lazy(() =>
-  import("./components/MaterialsComponents/Materials")
+const Materials = lazy(
+  () => import("./components/MaterialsComponents/Materials"),
 );
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />
         <Route path="/productos/materiales/:title" element={<Materials />} />
+        <Route path="/nosotros" element={<AboutUs />} />
       </Routes>
       <Footer />
     </NavigationProvider>

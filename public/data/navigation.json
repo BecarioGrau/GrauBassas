@@ -286,7 +286,7 @@
   "menuData": [
     { "label": "Portada", "href": "/", "page": "index" },
     { "label": "Servicios", "href": "/services", "page": "servicios" },
-    { "label": "Sobre Nosotros", "href": "/aboutus", "page": "nosotros" },
+    { "label": "Sobre Nosotros", "href": "/nosotros", "page": "nosotros" },
     { "label": "Contacto", "href": "/contact", "page": "contact" }
   ]
 }

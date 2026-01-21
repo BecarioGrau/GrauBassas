@@ -88,7 +88,7 @@ const Materials = () => {
   }
 
   const desktopHeroHeight = "380px";
-  const mobileHeroHeight = "360px";
+  const mobileHeroHeight = "auto";
   const gruposAcero = material.children || [];
   const heroDescription = `Descubre nuestro catálogo de ${material.label.toLowerCase()} seleccionado para garantizar calidad y disponibilidad.`;
 

@@ -11,7 +11,7 @@ import {
 export default function Contact() {
   const isMobile = useIsMobile();
   const desktopHeroHeight = "430px";
-  const mobileHeroHeight = "400px";
+  const mobileHeroHeight = "auto";
   const heroTile = isMobile ? (
     <>
       Ponte en contacto <br /> con nosotros

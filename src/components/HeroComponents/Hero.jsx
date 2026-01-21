@@ -12,27 +12,27 @@ export default function Hero({
 }) {
   return (
     <section
-      className="relative w-full overflow-hidden bg-gray-800 text-white h-[var(--m-height)] md:h-[var(--d-height)]"
+      className="relative w-full overflow-hidden bg-gray-800 text-white flex flex-col justify-center"
       style={{
-        "--m-height": mobileHeroHeight,
-        "--d-height": desktopHeroHeight,
+        minHeight:
+          window.innerWidth < 768 ? mobileHeroHeight : desktopHeroHeight,
       }}
     >
       <BackgroundSlideshow images={[img1, img2, img3]} />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent img"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-0"></div>
 
-      <div className="container mx-auto h-full flex flex-col pt-10 relative z-10 px-4">
-        <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+      <div className="container mx-auto h-full flex flex-col justify-center pt-20 pb-28 relative z-10 px-6">
+        <h1 className="text-3xl md:text-6xl font-black mb-4 leading-tight">
           {title}
         </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-2xl bg-black/30 p-4 border-l-4 border-primary backdrop-blur-sm">
+        <p className="text-base md:text-xl max-w-2xl bg-black/40 p-4 border-l-4 border-red-600 backdrop-blur-sm">
           {description}
         </p>
       </div>
 
       <div
-        className="absolute bottom-0 left-0 w-full h-24 bg-white"
+        className="absolute bottom-0 left-0 w-full h-16 md:h-24 bg-white z-20"
         style={{
           clipPath: "polygon(0 100%, 100% 100%, 100% 50%, 30% 0, 0 50%)",
         }}
