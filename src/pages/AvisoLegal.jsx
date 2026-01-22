@@ -1,7 +1,12 @@
 const AvisoLegal = () => {
   return (
     <main className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mt-15">Aviso Legal</h1>
+      <div className="my-10 text-center md:text-left">
+        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2 tracking-tight uppercase">
+          Aviso Legal
+        </h2>
+        <div className="w-16 h-1 bg-primary mb-4 mx-auto md:mx-0"></div>
+      </div>
       <div className="my-10 shadow-lg bg-gray-100 p-10 rounded-lg selection border-t-primary border-t-5">
         <section className="mb-4">
           <h2 className="h2-aviso-legal">1.Titular</h2>

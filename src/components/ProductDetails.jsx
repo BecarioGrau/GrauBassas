@@ -118,10 +118,11 @@ const ProductDetails = () => {
 
       <section className="py-10">
         <div className="container mx-auto px-6">
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">
+          <div className="mb-8 text-center md:text-left">
+            <h2 className="text-3xl md:text-3xl font-black text-gray-900 mb-2 tracking-tight uppercase">
               Formatos de corte
             </h2>
+            <div className="w-16 h-1 bg-primary mb-4 mx-auto md:mx-0"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

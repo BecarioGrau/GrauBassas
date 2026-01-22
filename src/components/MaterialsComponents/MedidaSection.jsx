@@ -4,23 +4,23 @@ import { useNavigate } from "react-router-dom";
 const MedidaSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="pb-12 mx-5">
-      <div className="container md:mx-auto mx-auto bg-gray-5 shadow-lg text-gray-900  border-t-4 border-primary p-6 rounded-md flex flex-col items-center">
-        <div className="text-lg text-center">
-          <h4>¿Necesitas un corte a medida?</h4>
-          <p className="md:text-md text-sm">
-            Ofrecemos servicios de sierra de cinta y logística rápida para que
-            tu proyecto no se detenga
-          </p>
-        </div>
+    <div className="container mx-auto px-4 pb-10">
+      <section className="mb-10 bg-gray-800 p-8 rounded-xl shadow-lg text-white text-center">
+        <p className="text-lg italic opacity-90 mb-6">
+          ¿Necesitas un corte a medida?
+        </p>
+        <p>
+          Ofrecemos servicios de corte a medida y logística rápida para que tu
+          proyecto no se detenga
+        </p>
         <button
-          className="bg-primary text-white hover:bg-primary/70 transition-colors duration-300 px-4 py-2 rounded-md mt-4 cursor-pointer"
+          className="bg-primary hover:bg-red-700 text-white mt-6 font-bold py-3 px-8 rounded-full transition-colors uppercase text-sm tracking-widest"
           onClick={() => navigate("/contacto")}
         >
-          Contactnos
+          Contáctanos
         </button>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 export default MedidaSection;

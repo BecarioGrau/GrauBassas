@@ -20,9 +20,12 @@ const AboutUS = () => {
       />
 
       <main className="container mx-auto px-4 pb-10">
-        <h1 className="font-bold text-4xl text-center mb-12 text-gray-800">
-          Sobre Nosotros
-        </h1>
+        <div className="mb-8 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2 tracking-tight uppercase">
+            Sobre Nosotros
+          </h2>
+          <div className="w-16 h-1 bg-primary mb-4 mx-auto md:mx-0"></div>
+        </div>
 
         <div className="max-w-5xl mx-auto">
           <section className="mb-16">

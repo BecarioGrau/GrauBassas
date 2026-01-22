@@ -1,85 +1,106 @@
 import React from "react";
 import HomeHero from "../components/HeroComponents/HomeHero";
 import Cards from "../components/Cards/Cards";
+import {
+  TruckIcon,
+  ShieldCheckIcon,
+  FactoryIcon,
+  MapPinIcon,
+} from "../components/Icons";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <main>
       <HomeHero />
 
       <Cards />
 
-      <section
-        className="relative bg-cover bg-center py-0 flex flex-col md:flex-row h-[550px] overflow-hidden"
-        style={{
-          backgroundImage: `url('/src/assets/img/o_1fvd17a7c12qldta14eq11nf6hna.webp')`,
-        }}
-      >
-        <div
-          className="absolute top-0 left-0 w-1/3 h-24 bg-primary z-10"
-          style={{ clipPath: "polygon(0 0, 100% 0, 80% 100%, 0% 100%)" }}
-        ></div>
-
-        <div className="w-full md:w-3/4 p-15 flex flex-col justify-center z-10 relative">
-          <div
-            className="absolute inset-0 bg-gray-800/95 clip-path-news-bg"
-            style={{ clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)" }}
-          ></div>
-          <div className="relative z-20 text-white max-w-2xl">
-            <h3 className="text-4xl font-bold mb-6">
-              Sobre nosotros <br />
-            </h3>
-            <p className="text-lg leading-relaxed mb-10 text-gray-300">
-              Almacenes Grau Bassas SL cuenta con más de 65 años de experiencia
-              en la venta y distribución de hierro, acero, metal, aluminio y
-              plásticos técnicos. Hemos logrado convertirnos en una de las
-              empresas punteras del mercado. Trabajamos para ofrecer a nuestros
-              clientes el mejor servicio posible, y apostamos siempre por la
-              calidad y la variedad en todos nuestros productos.
-            </p>
-            <a
-              href="#"
-              className="bg-white text-primary px-8 py-3 font-bold text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition"
-            >
-              Saber más
-            </a>
-          </div>
+      <section className="relative h-[480px] overflow-hidden group">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/src/assets/img/o_1fvd17a7c12qldta14eq11nf6hna.webp"
+            className="w-full h-full object-cover"
+            alt="Logística Industrial"
+          />
+          <div className="absolute inset-0 bg-gray-900/80"></div>
         </div>
 
-        <div className="absolute inset-0 w-full h-full">
-          <img
-            src="https://images.unsplash.com/photo-1535136814030-cf2c78a032f9?q=80&w=2696&auto=format&fit=crop"
-            className="w-full h-full object-cover"
-            alt="Novedades"
-          />
+        <div className="container mx-auto h-full flex items-center relative z-10 px-6">
+          <div className="max-w-2xl border-l-4 border-primary pl-8">
+            <h2 className="text-white text-4xl font-black uppercase tracking-tighter mb-4 leading-none">
+              Entregas seguras en <br /> todas las islas
+            </h2>
+            <p className="text-gray-300 text-lg mb-8 leading-snug">
+              Sabemos que su proyecto no puede esperar. Gestionamos una red
+              logística propia que garantiza el suministro de materiales en
+              tiempo récord a cualquier punto del archipiélago.
+            </p>
+
+            <div className="flex gap-4">
+              <button
+                className="bg-primary text-white px-8 py-4 font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-primary transition shadow-lg cursor-pointer"
+                onClick={() => navigate("/contacto")}
+              >
+                Solicitar presupuesto rápido
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative w-64 h-64 bg-gray-200 flex items-center justify-center rounded-full border-8 border-gray-100">
-              <span className="text-6xl font-black text-gray-300">A65</span>
-              <span className="absolute bottom-4 text-xs font-bold text-primary bg-gray-100 px-2">
-                años
-              </span>
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white shadow-xl rounded-xl flex items-center justify-center text-primary mb-6">
+                <ShieldCheckIcon size={32} />
+              </div>
+              <h4 className="font-bold text-gray-800 text-lg mb-2">
+                Calidad ISO
+              </h4>
+              <p className="text-gray-500 text-sm">
+                Materiales certificados bajo los más estrictos estándares
+                europeos.
+              </p>
             </div>
-          </div>
-          <div className="w-full md:w-1/2">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">
-              Nuestro recorrido en <br />
-              la industria
-            </h3>
-            <p className="text-gray-500 mb-6 text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo cum
-              doloremque quia consequatur illum fugiat in...
-            </p>
-            <a
-              href="#"
-              className="bg-primary hover:bg-primary-dark text-white px-8 py-3 text-xs font-bold tracking-widest uppercase"
-            >
-              Saber más
-            </a>
+
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white shadow-xl rounded-xl flex items-center justify-center text-primary mb-6">
+                <TruckIcon size={32} />
+              </div>
+              <h4 className="font-bold text-gray-800 text-lg mb-2">
+                Logística
+              </h4>
+              <p className="text-gray-500 text-sm">
+                Distribución ágil y eficiente.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white shadow-xl rounded-xl flex items-center justify-center text-primary mb-6">
+                <FactoryIcon size={32} />
+              </div>
+              <h4 className="font-bold text-gray-800 text-lg mb-2">
+                Gran Stock
+              </h4>
+              <p className="text-gray-500 text-sm">
+                Más de 5.000 referencias disponibles para entrega inmediata.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white shadow-xl rounded-xl flex items-center justify-center text-primary mb-6">
+                <MapPinIcon size={32} />
+              </div>
+              <h4 className="font-bold text-gray-800 text-lg mb-2">
+                Presencia Local
+              </h4>
+              <p className="text-gray-500 text-sm">
+                Desde 1959 apoyando el crecimiento de la industria en Canarias.
+              </p>
+            </div>
           </div>
         </div>
       </section>

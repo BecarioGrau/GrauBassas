@@ -102,11 +102,12 @@ const Materials = () => {
       />
 
       <main className="container mx-auto px-4 pb-8">
-        <header className="flex items-center justify-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center">
+        <div className="mb-8 text-center md:text-left">
+          <h2 className="text-3xl md:text-3xl font-black text-gray-900 mb-2 tracking-tight uppercase">
             Selector de calidades
           </h2>
-        </header>
+          <div className="w-16 h-1 bg-primary mb-4 mx-auto md:mx-0"></div>
+        </div>
 
         <section className="space-y-12">
           {gruposAcero.map((grupo, index) => (
