@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 export default function Marquee({ items = [], speed = 1 }) {
   const contentRef = useRef(null);
@@ -11,7 +11,7 @@ export default function Marquee({ items = [], speed = 1 }) {
 
     function animate() {
       posRef.current -= speed;
-      const contentWidth = el.scrollWidth / 3; 
+      const contentWidth = el.scrollWidth / 3;
 
       if (Math.abs(posRef.current) >= contentWidth) {
         posRef.current = 0;
@@ -29,15 +29,25 @@ export default function Marquee({ items = [], speed = 1 }) {
 
   const list = items.map((it, idx) => (
     <React.Fragment key={`item-${idx}`}>
-      <span className="cursor-pointer transition-all duration-300 hover:text-primary hover:scale-110 inline-block mx-10">{it}</span>
+      <span className="cursor-pointer transition-all duration-300 hover:text-primary hover:scale-110 inline-block mx-10">
+        {it}
+      </span>
       <span className="mx-10 items-center">•</span>
     </React.Fragment>
   ));
 
   return (
     <div className="w-full">
-      <div className="bg-[#555] text-white text-xs py-2 relative overflow-hidden" id="marquee-container">
-        <div ref={contentRef} id="marquee-content" className="flex whitespace-nowrap tracking-widest uppercase font-semibold" style={{ willChange: 'transform' }}>
+      <div
+        className="bg-[#555] text-white text-xs py-2 relative overflow-hidden"
+        id="marquee-container"
+      >
+        <div
+          ref={contentRef}
+          id="marquee-content"
+          className="flex whitespace-nowrap tracking-widest uppercase font-semibold"
+          style={{ willChange: "transform" }}
+        >
           {list}
           {list}
           {list}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "../components/HeroComponents/Hero";
 import useIsMobile from "../hooks/useIsMobile";
 import {
@@ -10,8 +10,11 @@ import {
 
 export default function Contact() {
   const isMobile = useIsMobile();
+  const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
+
   const desktopHeroHeight = "430px";
   const mobileHeroHeight = "auto";
+
   const heroTile = isMobile ? (
     <>
       Ponte en contacto <br /> con nosotros
@@ -21,6 +24,7 @@ export default function Contact() {
       Ponte en <br /> contacto con nosotros
     </>
   );
+
   const heroDescription =
     "Estamos aquí para ayudarle con sus necesidades de materiales metalúrgicos. Solicite presupuesto o resuelva sus dudas.";
 
@@ -28,9 +32,16 @@ export default function Contact() {
     e.preventDefault();
     const form = new FormData(e.target);
     const payload = Object.fromEntries(form.entries());
+
+    if (!acceptedPrivacy) {
+      alert("Debe aceptar la política de privacidad");
+      return;
+    }
+
     console.log("Contact form submitted:", payload);
-    alert("Mensaje enviado.");
+    alert("Mensaje enviado con éxito.");
     e.target.reset();
+    setAcceptedPrivacy(false);
   }
 
   return (
@@ -48,7 +59,8 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6 uppercase">
               Envíenos un mensaje
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-6" method="POST">
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -58,7 +70,8 @@ export default function Contact() {
                     Nombre
                   </label>
                   <input
-                    className=" h-9 w-full text-ce border-gray-300 rounded-sm shadow-lg focus:border-primary focus:ring-primary"
+                    required
+                    className="h-9 w-full border-gray-300 rounded-sm shadow-sm focus:border-primary focus:ring-primary"
                     id="name"
                     name="name"
                     placeholder="Nombre completo"
@@ -73,7 +86,7 @@ export default function Contact() {
                     Empresa (Opcional)
                   </label>
                   <input
-                    className="h-9 w-full border-gray-300 rounded-sm shadow-lg focus:border-primary focus:ring-primary"
+                    className="h-9 w-full border-gray-300 rounded-sm shadow-sm focus:border-primary focus:ring-primary"
                     id="company"
                     name="company"
                     placeholder="Nombre de la empresa"
@@ -91,7 +104,8 @@ export default function Contact() {
                     Email
                   </label>
                   <input
-                    className="h-9 w-full border-gray-300 rounded-sm shadow-lg focus:border-primary focus:ring-primary"
+                    required
+                    className="h-9 w-full border-gray-300 rounded-sm shadow-sm focus:border-primary focus:ring-primary"
                     id="email"
                     name="email"
                     placeholder="ejemplo@correo.com"
@@ -106,7 +120,8 @@ export default function Contact() {
                     Teléfono
                   </label>
                   <input
-                    className="h-9 w-full border-gray-300 rounded-sm shadow-lg focus:border-primary focus:ring-primary"
+                    required
+                    className="h-9 w-full border-gray-300 rounded-sm shadow-sm focus:border-primary focus:ring-primary"
                     id="phone"
                     name="phone"
                     placeholder="+34 600 000 000"
@@ -123,10 +138,12 @@ export default function Contact() {
                   Asunto
                 </label>
                 <select
-                  className="h-9 w-full border-gray-300 rounded-sm shadow-lg focus:border-primary focus:ring-primary"
+                  className="h-9 w-full border-gray-300 rounded-sm shadow-sm focus:border-primary focus:ring-primary"
                   id="subject"
                   name="subject"
+                  required
                 >
+                  <option value="">Seleccione una opción</option>
                   <option>Información General</option>
                   <option>Solicitar Presupuesto</option>
                   <option>Suministros</option>
@@ -142,7 +159,8 @@ export default function Contact() {
                   Mensaje
                 </label>
                 <textarea
-                  className="h-24 w-full border-gray-300 rounded-sm shadow-lg focus:border-primary focus:ring-primary"
+                  required
+                  className="h-24 w-full border-gray-300 rounded-sm shadow-sm focus:border-primary focus:ring-primary"
                   id="message"
                   name="message"
                   placeholder="¿En qué podemos ayudarle?"
@@ -153,15 +171,18 @@ export default function Contact() {
               <div className="flex items-start">
                 <div className="flex items-center h-5">
                   <input
-                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded"
+                    required
+                    className="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded cursor-pointer"
                     id="privacy"
                     name="privacy"
                     type="checkbox"
+                    checked={acceptedPrivacy}
+                    onChange={(e) => setAcceptedPrivacy(e.target.checked)}
                   />
                 </div>
                 <div className="ml-3 text-sm">
                   <label
-                    className="font-medium text-gray-700 "
+                    className="font-medium cursor-pointer text-gray-700"
                     htmlFor="privacy"
                   >
                     He leído y acepto la{" "}
@@ -175,7 +196,12 @@ export default function Contact() {
 
               <div>
                 <button
-                  className=" rounded-sm w-full md:w-auto px-8 py-3 bg-primary hover:bg-primary-dark text-white font-bold uppercase tracking-wider transition-colors shadow-md"
+                  disabled={!acceptedPrivacy}
+                  className={`rounded-sm w-full md:w-auto px-8 py-3 font-bold uppercase tracking-wider transition-all shadow-md ${
+                    acceptedPrivacy
+                      ? "bg-primary hover:bg-red-800 text-white cursor-pointer"
+                      : "bg-gray-400 text-gray-200 cursor-not-allowed"
+                  }`}
                   type="submit"
                 >
                   Enviar Mensaje

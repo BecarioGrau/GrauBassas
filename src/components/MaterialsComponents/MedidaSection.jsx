@@ -14,7 +14,7 @@ const MedidaSection = () => {
           proyecto no se detenga
         </p>
         <button
-          className="bg-primary hover:bg-red-700 text-white mt-6 font-bold py-3 px-8 rounded-full transition-colors uppercase text-sm tracking-widest"
+          className="bg-primary hover:bg-red-700 text-white mt-6 font-bold py-3 px-8 rounded-full transition-colors uppercase text-sm tracking-widest cursor-pointer"
           onClick={() => navigate("/contacto")}
         >
           Contáctanos
