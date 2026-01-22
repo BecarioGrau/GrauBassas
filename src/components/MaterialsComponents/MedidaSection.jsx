@@ -15,7 +15,7 @@ const MedidaSection = () => {
         </div>
         <button
           className="bg-primary text-white hover:bg-primary/70 transition-colors duration-300 px-4 py-2 rounded-md mt-4 cursor-pointer"
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/contacto")}
         >
           Contactnos
         </button>

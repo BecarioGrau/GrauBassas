@@ -59,7 +59,7 @@ export default function Footer() {
 
       <div className="container mx-auto mt-2 pt-1 border-t border-white/20 text-center text-xs text-white/60 flex justify-between">
         <div className="space-x-4">
-          <a href="/contact">Contacto</a> |{" "}
+          <a href="/contacto">Contacto</a> |{" "}
           <a href="/aviso-legal">Aviso Legal</a> |{" "}
           <a href="#">Terminos y Condiciones</a>
         </div>

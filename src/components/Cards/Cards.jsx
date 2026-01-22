@@ -6,7 +6,7 @@ export default function Cards() {
     <section className="pb-10 min-h-[700px]">
       <div className="container mx-auto px-6">
         <div className="mb-6">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900  mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-center text-gray-900  mb-4 tracking-tight">
             Catálogo de Materiales
           </h2>
           <p className="text-gray-500 text-lg max-w-3xl leading-relaxed">
